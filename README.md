@@ -1,0 +1,1 @@
+# -Ruby-naiitei-16-Library-manager-
