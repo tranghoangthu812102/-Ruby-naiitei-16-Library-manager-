@@ -38,3 +38,5 @@
 .framgia-ci-result.temp.yml
 
 /node_modules
+
+.idea
