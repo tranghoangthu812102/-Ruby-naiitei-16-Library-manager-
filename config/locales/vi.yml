@@ -1,0 +1,24 @@
+vi:
+  layouts:
+    application:
+      title: "Sun Library"
+    header:
+      title: "Sun Library"
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+      intro: "Chào mừng đến với thư viện trực tuyến"
+    footer:
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+      by: "bởi"
+      copyright: "Bản quyền"
+  static_pages:
+    home:
+      fore_title: "Trang chủ"
+      name: "Thư viện Sun"
+      intro_1: "Đây là trang chủ của"
+    help:
+      fore_title: "Hỗ trợ"
+      intro_1: "Nhận trợ giúp tại "
+      name: "Facebook"
