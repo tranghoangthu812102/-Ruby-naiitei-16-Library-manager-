@@ -1,0 +1,17 @@
+<nav class="scrolled">
+  <div class="logo"></div>
+  <ul>
+    <li><%= link_to t(".home"), home_path %></li>
+    <li><%= link_to t(".help"), help_path %></li>
+    <li><a href="#">Item 3</a></li>
+    <li><a href="#">Item 4</a></li>
+  </ul>
+</nav>
+<header>
+  <div class="headline">
+    <div class="inner">
+      <h1><%= link_to t(".title") , "/", id: "title_header" %></h1>
+      <p><%= t ".intro" %></p>
+    </div>
+  </div>
+</header>
