@@ -32,6 +32,8 @@ class User < ApplicationRecord
             size: {less_than: Settings.max_image_size.megabytes,
                    message: I18n.t(".should_smaller")}
 
+  enum role: {admin: 0, member: 1}
+
   has_secure_password
 
   def display_image
