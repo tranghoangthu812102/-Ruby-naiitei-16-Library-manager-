@@ -18,7 +18,27 @@ vi:
       fore_title: "Trang chủ"
       name: "Thư viện Sun"
       intro_1: "Đây là trang chủ của"
+      signup: "Đăng ký"
     help:
       fore_title: "Hỗ trợ"
       intro_1: "Nhận trợ giúp tại "
       name: "Facebook"
+  users:
+    new:
+      sign_up: "Đăng ký"
+      name: "Họ tên"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      create_my_account: "Tạo tài khoản"
+    create:
+      welcome_to_library!: "Chào mừng đến với thư viện"
+      registration_failed: "Đăng ký không thành công"
+  shared:
+    error_messages:
+      error: "Thông tin bạn nhập có"
+      the_form_contains: "lỗi"
+  invalid_format_image: "không đúng định dạng"
+  should_smaller: "quá lớn"
+  application:
+    handle_record_not_found:
+      user_not_found: "Người dùng không tồn tại"

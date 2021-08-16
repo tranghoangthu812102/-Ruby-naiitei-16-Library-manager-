@@ -18,7 +18,27 @@ en:
       fore_title: "Home"
       name: "Sun Library"
       intro_1: "This is the home page for the"
+      signup: "Sign up"
     help:
       fore_title: "Help"
       intro_1: "Get help at "
       name: "Facebook"
+  users:
+    new:
+      sign_up: "Signup"
+      name: "Name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      create_my_account: "Create account"
+    create:
+      welcome_to_library!: "Welcome to library!"
+      registration_failed: "Registration failed"
+  shared:
+    error_messages:
+      the_form_contains: "The form contains"
+      error: "error"
+  invalid_format_image: "onvalid format image"
+  should_smaller: "is too big"
+  application:
+    handle_record_not_found:
+      user_not_found: "User not found"
