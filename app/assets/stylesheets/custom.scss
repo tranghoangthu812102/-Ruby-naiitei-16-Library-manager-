@@ -22,6 +22,7 @@ header {
   text-align: center;
   background: url('https://farm9.staticflickr.com/8088/8363737128_b76782c7a2_b.jpg') no-repeat center center;
   background-size: cover;
+  margin-bottom: 20px;
 
   &:after {
     position: absolute;
@@ -58,7 +59,7 @@ header {
 }
 
 nav {
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 10;
 
@@ -147,4 +148,59 @@ section {
     font-family: rubik;
     font-size: 1.2em;
     width: 100%;
+}
+
+footer {
+  @mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* miscellaneous */
+  .debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
+  }
+}
+
+/* forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.create_account_button{
+  margin-bottom: 5px;
+}
+
+.avatar img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
