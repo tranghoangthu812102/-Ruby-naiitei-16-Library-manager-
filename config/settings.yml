@@ -26,3 +26,4 @@ validation:
   min_length: 2
   max_length: 50
   num: 12
+zero: 0
