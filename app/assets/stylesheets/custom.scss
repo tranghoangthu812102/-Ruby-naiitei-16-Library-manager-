@@ -1,5 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "color.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
@@ -17,7 +15,7 @@ header {
 
 .headline {
   position: relative;
-  height: 8rem;
+  height: 6rem;
   color: #fff;
   text-align: center;
   background: url('https://farm9.staticflickr.com/8088/8363737128_b76782c7a2_b.jpg') no-repeat center center;
@@ -188,8 +186,6 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
-
   .form-control {
     color: $state-danger-text;
   }
