@@ -58,6 +58,8 @@ build-iPhoneSimulator/
 /storage/*
 !/storage/.keep
 
+/public/packs
+/public/packs-test
 /public/assets
 .byebug_history
 
