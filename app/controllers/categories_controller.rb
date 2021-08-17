@@ -49,9 +49,9 @@ class CategoriesController < ApplicationController
   end
 
   def require_admin
-    return unless logged_in? && !current_user.admin?
+    return if logged_in? && current_user.admin?
 
-    flash[:alert] = t "only_admin"
+    flash[:danger] = t "only_admin"
     redirect_to categories_path
   end
 

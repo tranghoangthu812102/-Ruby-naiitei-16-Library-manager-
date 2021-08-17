@@ -144,6 +144,24 @@ vi:
       name_book: "Tên sách"
       author: "Tác giả"
     not_found: "Sách không tồn tại"
+    show:
+      title: "sách"
+      Book: "sách: "
+      edit_name: "Chỉnh sửa thông tin sách"
+      delete_book: "Xóa sách"
+      are_you_sure: "Bạn có chắc chắn muốn xóa sách?"
+      created: "Tạo"
+      ago: "trước"
+      edited: "Chỉnh sửa"
+    destroy:
+      success_delete: "Sách và tất cả các bài viết liên quan đã được xóa thành công"
+    edit:
+      edit_profile: "Chỉnh sửa thông tin "
+      update_book: "Cập nhật"
+      back: "Quay lại"
+    update:
+      edit_success: "Cập nhật thành công"
+      edit_failed: "Cập nhật thất bại"
   admin:
     shared:
       info_cards:
