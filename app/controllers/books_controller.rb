@@ -4,9 +4,11 @@ class BooksController < ApplicationController
   before_action :list_categories, only: %i(new create edit)
   before_action :require_admin, except: %i(index show)
   before_action :list_selected, only: :edit
+  before_action :load_rate, only: :show
 
   def index
-    @books = Book.all.page params[:page]
+    search_result = Book.search params[:name]
+    @books = search_result.page(params[:page]).per Settings.validation.num
   end
 
   def new
@@ -107,5 +109,12 @@ class BooksController < ApplicationController
 
     flash[:danger] = t "only_admin"
     redirect_to books_path
+  end
+
+  def load_rate
+    return if @book.reviews.empty?
+
+    sum = @book.reviews.pluck(:rate).sum
+    @rate = sum.to_f / @book.reviews.size
   end
 end

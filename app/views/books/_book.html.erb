@@ -10,7 +10,7 @@
             <% if logged_in? && current_user.admin? %>
               <%= link_to book.name, book  %>
             <% else %>
-              <%= link_to book.name, showbook_path(book)  %>
+              <%= link_to book.name, user_books_show_path(book)  %>
             <% end %>
           </h3>
           <h4><%= t ".author" %>: <%= book.author_name %></h4>

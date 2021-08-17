@@ -10,6 +10,8 @@ class Book < ApplicationRecord
 
   delegate :name, to: :author, prefix: true
 
+  scope :search, ->(name){where "name LIKE ?", "%#{name}%"}
+
   PERMITTED_FIELDS =
     [
       :name, :detail, :number_of_page,

@@ -1,0 +1,25 @@
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1"><%= t ".name" %></div>
+      <div class="col col-2"><%= t ".author" %></div>
+      <div class="col col-3"><%= t ".category" %></div>
+      <div class="col col-4"><%= t ".action" %></div>
+    </li>
+    <% @books.each do |book| %>
+      <li class="table-row">
+        <div class="col col-1"><%= book.name %></div>
+        <div class="col col-2"><%= book.author_name %></div>
+        <div class="col col-3">
+          <% book.categories.each do |category| %>
+            <button class="btn btn-light"><%= category.name %></button>
+          <% end %>
+        </div>
+        <div class="col col-4">
+          <%= link_to t(".view"), book, class: "btn btn-outline-info"  %>
+          <%= link_to t(".delete_book"), book, class: "btn btn-outline-danger", method: :delete, data: {confirm: t(".are_you_sure")} %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

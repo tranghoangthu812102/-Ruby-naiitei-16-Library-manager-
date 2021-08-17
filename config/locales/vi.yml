@@ -26,6 +26,7 @@ vi:
       books: "Mượn sách"
       admin: "Quản lý ->"
       borrowed_book: "Sách đã mượn"
+      admin: "Quản lý"
     footer:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
@@ -35,7 +36,7 @@ vi:
       view: "Xem thể loại"
       create: "Tạo thể loại"
       categories: "Thể loại"
-      user_page: "Về giao diện thành viên"
+      user_page: "Về giao diện user"
       logout: "Đăng xuất"
       books: "Sách"
       view_books: "Danh sách"
@@ -123,7 +124,7 @@ vi:
       category_delete: "Thể loại và tất cả sách, bài viết liên quan đã được xóa thành công"
     show:
       title: "Thể loại"
-      category: "DThể loại: "
+      category: "Thể loại: "
       edit_name: "Đổi tên thể loại"
       delete_category: "Xóa thể loại"
       are_you_sure: "Bạn có chắc chắn muốn xóa tài khoản người dùng và tất cả các bài viết liên quan không?"
@@ -149,7 +150,7 @@ vi:
     not_found: "Sách không tồn tại"
     show:
       title: "sách"
-      Book: "sách: "
+      book: "Thông tin"
       edit_name: "Chỉnh sửa thông tin sách"
       delete_book: "Xóa sách"
       are_you_sure: "Bạn có chắc chắn muốn xóa sách?"
@@ -157,6 +158,12 @@ vi:
       ago: "trước"
       edited: "Chỉnh sửa"
       borrow_book: "Borrow book"
+      rate: "Đánh giá"
+      no_cmt: "Không có đánh giá nào"
+      name: "Tên"
+      author: "Tác giả"
+      detail: "Tóm tắt"
+      category: "Thể loại"
     destroy:
       success_delete: "Sách và tất cả các bài viết liên quan đã được xóa thành công"
     edit:
@@ -166,6 +173,12 @@ vi:
     update:
       edit_success: "Cập nhật thành công"
       edit_failed: "Cập nhật thất bại"
+    book_admin:
+      name: "Tên"
+      author: "Tác giả"
+      are_you_sure: "Bạn có chắc chắn muốn xóa sách?"
+      category: "Thể loại"
+      action: "Hành động"
   admin:
     shared:
       info_cards:
