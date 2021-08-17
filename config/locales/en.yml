@@ -1,4 +1,6 @@
 en:
+  link_return: "[ Cancel and return to category ]"
+  only_admin: "Only admins can perform that action"
   layouts:
     application:
       title: "Sun Library"
@@ -13,6 +15,9 @@ en:
       profile: "Profile"
       settings: "Settings"
       logout: "Logout"
+      categories: "Categories"
+      create: "Create new category"
+      view: "View categories"
     footer:
       english: "English"
       vietnamese: "Vietnamese"
@@ -42,11 +47,14 @@ en:
     error_messages:
       the_form_contains: "The form contains"
       error: "error"
+    errors:
+      mess: "The following errors prevented the"
+      saved: "from being saved"
   invalid_format_image: "onvalid format image"
   should_smaller: "is too big"
   application:
     handle_record_not_found:
-      user_not_found: "User not found"
+    not_found: "Data not found"
   sessions:
     create:
       invalid_email_password_combination: "Invalid email or password"
@@ -55,3 +63,34 @@ en:
       password: "Password"
   sign_up_now!: "Signup now!"
   new_user?: "New user?"
+  categories:
+    form:
+      name: "Name"
+    edit:
+      title: "Edit Category"
+      save_change: "Save Change"
+      edit_name: "Edit Category Name"
+    update:
+      edit_success: "Category name updated successfully"
+      edit_fail: "Edit fail"
+    index:
+      title: "Categories"
+      list_categories: "Categories"
+      category_name: "Category name"
+      search: "Search"
+    new:
+      title: "Create Category"
+      create: "Create"
+      create_new: "Create a new category"
+    create:
+      create_success: "Category was successfully created"
+      create_fail: "Create Fail"
+    destroy:
+      category_delete: "Category and all associated articles successfully deleted"
+    show:
+      title: "Catedory"
+      category: "Category: "
+      edit_name: "Edit category name"
+      delete_category: "Delete Category"
+      are_you_sure: "Are you sure you want to delete the user account and all associated articles?"
+      list_book: "List Books"

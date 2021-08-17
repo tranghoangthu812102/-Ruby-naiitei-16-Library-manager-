@@ -2,6 +2,14 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+@mixin box_sizing {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -76,6 +84,11 @@ nav {
     float: left;
   }
 
+  .dropdown-menu{
+    background-color: DodgerBlue;
+    font-size: 0.9em;
+  }
+
   a {
     font-size: 1.2em;
     color: #fff;
@@ -148,6 +161,7 @@ section {
     width: 100%;
 }
 
+
 footer {
   @mixin box_sizing {
     -moz-box-sizing: border-box;
@@ -167,15 +181,27 @@ footer {
 
 /* forms */
 input, textarea, select, .uneditable-input {
+  margin-right: 30%;
   border: 1px solid #bbb;
-  width: 100%;
+  width: 30%;
+  margin-top: 20px;
   margin-bottom: 15px;
+  @include box_sizing;
 }
 
 input {
   height: auto !important;
 }
+.row{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.form{
+  margin-top: 20px;
+}
 #error_explanation {
   color: red;
 
@@ -199,4 +225,96 @@ input {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+.mb-3{
+  margin-top: 30px;
+
+  .text-info{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.btn-primary{
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+/* index  category */
+.index{
+  width: 22%;
+  padding: 10px;
+  margin-left: 90px !important;
+  margin-top: 30px;
+}
+
+/* Search Form */
+.has-search{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+/* pagination */
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  border-left: 1px solid #ddd;
+  margin-top: 20px;
+
+  .first{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+
+  .prev {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+
+  .page{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+
+  .next{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+
+  .last{
+    padding : 0;
+    float: none;
+    border: none;
+  }
 }

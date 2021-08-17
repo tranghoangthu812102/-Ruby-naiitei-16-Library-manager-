@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
   def handle_record_not_found
-    flash[:danger] = t ".user_not_found"
+    flash[:danger] = t ".not_found"
     redirect_to root_path
   end
 

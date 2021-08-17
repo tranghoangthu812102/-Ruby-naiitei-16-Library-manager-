@@ -1,4 +1,6 @@
 vi:
+  link_return: "[ Hủy và trở về trang Category]"
+  only_admin: "Chỉ quản trị viên mới có thể thực hiện hành động đó"
   layouts:
     application:
       title: "Sun Library"
@@ -13,6 +15,9 @@ vi:
       profile: "Trang cá nhân"
       settings: "Cài đặt"
       logout: "Đăng xuất"
+      categories: "Danh mục"
+      create: "Tạo danh mục"
+      view: "Xem danh mục"
     footer:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
@@ -42,11 +47,14 @@ vi:
     error_messages:
       error: "Thông tin bạn nhập có"
       the_form_contains: "lỗi"
+    errors:
+      mess: "Các lỗi sau đây đã ngăn"
+      saved: "không được lưu"
   invalid_format_image: "không đúng định dạng"
   should_smaller: "quá lớn"
   application:
     handle_record_not_found:
-      user_not_found: "Người dùng không tồn tại"
+      not_found: "Dữ liệu không tồn tại"
   sessions:
     create:
       invalid_email_password_combination: "Tài khoản hoặc mật khẩu không hợp lệ"
@@ -55,3 +63,34 @@ vi:
       password: "Mật khẩu"
   sign_up_now!: "Đăng ký ngay!"
   new_user?: "Chưa có tài khoản?"
+  categories:
+    form:
+      name: "Tên"
+    edit:
+      title: "Sửa Category"
+      save_change: "Lưu thay đổi"
+      edit_name: "Đổi tên Category"
+    update:
+      edit_success: "Đã cập nhật thành công tên danh mục"
+      edit_fail: "Chỉnh sửa không thành công"
+    index:
+      title: "Danh mục"
+      list_categories: "Danh sách danh mục"
+      category_name: "Danh mục"
+      search: "Tìm"
+    new:
+      title: "Thêm danh mục"
+      create: "Thêm"
+      create_new: "Tạo một danh mục mới"
+    create:
+      create_success: "Danh mục đã được tạo thành công"
+      create_fail: "Không tạo thành công"
+    destroy:
+      category_delete: "Danh mục và tất cả các bài viết liên quan đã được xóa thành công"
+    show:
+      title: "Danh mục"
+      category: "Danh mục: "
+      edit_name: "Đổi tên danh mục"
+      delete_category: "Xóa danh mục"
+      are_you_sure: "Bạn có chắc chắn muốn xóa tài khoản người dùng và tất cả các bài viết liên quan không?"
+      list_book: "Danh sách đầu sách"
