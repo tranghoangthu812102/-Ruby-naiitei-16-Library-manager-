@@ -8,6 +8,11 @@ vi:
       help: "Trợ giúp"
       login: "Đăng nhập"
       intro: "Chào mừng đến với thư viện trực tuyến"
+      user: "Người dùng"
+      account: "Tài khoản"
+      profile: "Trang cá nhân"
+      settings: "Cài đặt"
+      logout: "Đăng xuất"
     footer:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
@@ -42,3 +47,11 @@ vi:
   application:
     handle_record_not_found:
       user_not_found: "Người dùng không tồn tại"
+  sessions:
+    create:
+      invalid_email_password_combination: "Tài khoản hoặc mật khẩu không hợp lệ"
+    new:
+      log_in: "Đăng nhập"
+      password: "Mật khẩu"
+  sign_up_now!: "Đăng ký ngay!"
+  new_user?: "Chưa có tài khoản?"

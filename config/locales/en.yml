@@ -8,6 +8,11 @@ en:
       help: "Help"
       login: "Login"
       intro: "Welcome"
+      user: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Logout"
     footer:
       english: "English"
       vietnamese: "Vietnamese"
@@ -42,3 +47,11 @@ en:
   application:
     handle_record_not_found:
       user_not_found: "User not found"
+  sessions:
+    create:
+      invalid_email_password_combination: "Invalid email or password"
+    new:
+      log_in: "Login"
+      password: "Password"
+  sign_up_now!: "Signup now!"
+  new_user?: "New user?"

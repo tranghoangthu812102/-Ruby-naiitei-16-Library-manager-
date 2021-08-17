@@ -128,6 +128,8 @@ GEM
       dry-schema (~> 1.5, >= 1.5.2)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.1.2)
+      i18n (>= 0.8)
     ffi (1.15.3)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -307,6 +309,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.4.1)
   capybara (>= 3.26)
   config
+  faker (= 2.1.2)
   image_processing (= 1.9.3)
   jbuilder (~> 2.7)
   listen (~> 3.3)
