@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  load_and_authorize_resource
   before_action :find_book, except: %i(index new create)
   before_action :list_categories, only: %i(new)
 
@@ -16,7 +17,7 @@ class BooksController < ApplicationController
   def create
     if create_book
       flash[:success] = t ".success"
-      redirect_to root_path
+      redirect_to books_path
     else
       flash.now[:danger] = t ".failed"
       render :new
@@ -33,8 +34,11 @@ class BooksController < ApplicationController
     @book = Book.find_by id: params[:id]
     return if @book
 
-    flash.now[:danger] = t "not_found"
-    redirect_to root_path
+    if admin_page?
+      redirect_to books_path, flash: {danger: t(".not_found")}
+    else
+      redirect_to user_books_path, flash: {danger: t(".not_found")}
+    end
   end
 
   def create_book

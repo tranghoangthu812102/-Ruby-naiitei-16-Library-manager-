@@ -4,7 +4,7 @@ en:
   layouts:
     application:
       title: "Sun Library"
-    header:
+    user_header:
       title: "Sun Library"
       home: "Home"
       help: "Help"
@@ -18,11 +18,25 @@ en:
       categories: "Categories"
       create: "Create new category"
       view: "View categories"
+      english: "English"
+      vietnamese: "Vietnamese"
+      books: "Borrow book"
+      admin: "Admin ->"
     footer:
       english: "English"
       vietnamese: "Vietnamese"
       by: "by"
       copyright: "Copyright"
+    admin_header:
+      view: "View categories"
+      create: "Create new category"
+      categories: "Categories"
+      user_page: "Back to memmber's page"
+      logout: "Logout"
+      books: "Books"
+      view_books: "View book list"
+      create_books: "Create new book"
+      home: "Home"
   static_pages:
     home:
       fore_title: "Home"
@@ -55,6 +69,7 @@ en:
   application:
     handle_record_not_found:
     not_found: "Data not found"
+    action_not_allowed: "Action not allowed!"
   sessions:
     create:
       invalid_email_password_combination: "Invalid email or password"
@@ -111,3 +126,11 @@ en:
     book:
       name_book: "Name"
       author: "Author"
+    not_found: "Book not exists"
+  admin:
+    shared:
+      info_cards:
+        quantity: "Quantity: "
+    index:
+      dashboard: "Dashboard"
+      admin: "Admin"

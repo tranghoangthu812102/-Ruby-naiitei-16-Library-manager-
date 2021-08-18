@@ -7,6 +7,7 @@ gem "bcrypt", "~> 3.1.11"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-kaminari-views"
 gem "bootstrap_form"
+gem "cancancan"
 gem "chosen-rails"
 gem "config"
 gem "faker", "2.1.2"

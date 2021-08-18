@@ -1,0 +1,7 @@
+<% provide :title, t(".admin") %>
+
+<h2 class="py-3"><%= t ".dashboard" %></h2>
+<div class="row">
+  <%= render "admin/shared/info_cards", {title: t("layouts.admin_header.categories"), path: categories_path, model: Category}%>
+  <%= render "admin/shared/info_cards", {title: t("layouts.admin_header.books"), path: books_path, model: Book}%>
+</div>
