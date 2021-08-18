@@ -22,3 +22,7 @@ image_restricted_types:
   - image/png
 max_image_size: 5
 default_avatar: "https://stickershop.line-scdn.net/stickershop/v1/product/1075960/LINEStorePC/main.png;compress=true"
+validation:
+  min_length: 2
+  max_length: 50
+  num: 12

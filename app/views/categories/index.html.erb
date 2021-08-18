@@ -1,0 +1,23 @@
+<%= provide :title, t(".title") %>
+<h1 class="text-center mt-4"> <%= t ".list_categories" %></h1>
+
+<div class="search-form">
+  <%= form_with url: categories_path, local: true, method: :get, class: "search-form" do |f| %>
+    <div class="form-group has-search">
+      <span class="fa fa-search form-control-feedback"></span>
+      <%= f.text_field :name, placeholder: t(".category_name"),class: "form-control" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <% @categories.each do |category| %>
+    <button type="button" class="btn btn-outline-info index">
+      <%= link_to category.name, category_path(category) %>
+    </button>
+  <% end %>
+</div>
+
+<div class="container pagination justify-content-center" >
+  <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+</div>
