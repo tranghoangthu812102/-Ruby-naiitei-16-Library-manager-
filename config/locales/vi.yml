@@ -94,3 +94,20 @@ vi:
       delete_category: "Xóa danh mục"
       are_you_sure: "Bạn có chắc chắn muốn xóa tài khoản người dùng và tất cả các bài viết liên quan không?"
       list_book: "Danh sách đầu sách"
+  books:
+    form:
+      name_placeholder: "Tên sách "
+      detail_placeholder: "Thông tin sách"
+      back: "Quay lại danh sách các sách"
+      create_book: "Tạo"
+    new:
+      new_book: "Thêm sách mới"
+    create:
+      success: "Tạo sách mới thành công"
+      failed: "Tạo sách thất bại"
+    index:
+      list_book: "Danh sách"
+      no_book: "Không có thông tin sách nào"
+    book:
+      name_book: "Tên sách"
+      author: "Tác giả"

@@ -94,3 +94,20 @@ en:
       delete_category: "Delete Category"
       are_you_sure: "Are you sure you want to delete the user account and all associated articles?"
       list_book: "List Books"
+  books:
+    form:
+      name_placeholder: "Name book"
+      detail_placeholder: "Detail book"
+      back: "Back to list book"
+      create_book: "Create Book"
+    new:
+      new_book: "New Book"
+    create:
+      success: "Create book complete"
+      failed: "Create book failed"
+    index:
+      list_book: "List Book"
+      no_book: "No book information"
+    book:
+      name_book: "Name"
+      author: "Author"
