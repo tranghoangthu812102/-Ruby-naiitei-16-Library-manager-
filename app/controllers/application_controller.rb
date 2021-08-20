@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  include AdminHelper
 
   before_action :set_locale
 
@@ -8,6 +9,10 @@ class ApplicationController < ActionController::Base
   def handle_record_not_found
     flash[:danger] = t ".not_found"
     redirect_to root_path
+  end
+
+  rescue_from CanCan::AccessDenied do
+    redirect_to home_path, flash: {danger: t("application.action_not_allowed")}
   end
 
   private

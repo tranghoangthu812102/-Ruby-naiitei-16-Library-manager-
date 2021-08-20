@@ -4,7 +4,7 @@ vi:
   layouts:
     application:
       title: "Sun Library"
-    header:
+    user_header:
       title: "Sun Library"
       home: "Trang chủ"
       help: "Trợ giúp"
@@ -15,14 +15,28 @@ vi:
       profile: "Trang cá nhân"
       settings: "Cài đặt"
       logout: "Đăng xuất"
-      categories: "Danh mục"
-      create: "Tạo danh mục"
-      view: "Xem danh mục"
+      categories: "Thể loại"
+      create: "Tạo thể loại mới"
+      view: "Xem các thể loại"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+      books: "Mượn sách"
+      admin: "Quản lý ->"
     footer:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
       by: "bởi"
       copyright: "Bản quyền"
+    admin_header:
+      view: "Xem thể loại"
+      create: "Tạo thể loại"
+      categories: "Thể loại"
+      user_page: "Về giao diện thành viên"
+      logout: "Đăng xuất"
+      books: "Sách"
+      view_books: "Danh sách"
+      create_books: "Tạo sách mới"
+      home: "Trang chủ"
   static_pages:
     home:
       fore_title: "Trang chủ"
@@ -55,6 +69,7 @@ vi:
   application:
     handle_record_not_found:
       not_found: "Dữ liệu không tồn tại"
+    action_not_allowed: "Bạn không có quyền truy cập!"
   sessions:
     create:
       invalid_email_password_combination: "Tài khoản hoặc mật khẩu không hợp lệ"
@@ -71,27 +86,27 @@ vi:
       save_change: "Lưu thay đổi"
       edit_name: "Đổi tên Category"
     update:
-      edit_success: "Đã cập nhật thành công tên danh mục"
+      edit_success: "Đã cập nhật thành công tên thể loại"
       edit_fail: "Chỉnh sửa không thành công"
     index:
-      title: "Danh mục"
-      list_categories: "Danh sách danh mục"
-      category_name: "Danh mục"
+      title: "Thể loại"
+      list_categories: "Danh sách"
+      category_name: "Thể loại"
       search: "Tìm"
     new:
-      title: "Thêm danh mục"
+      title: "Tạo thể loại mới"
       create: "Thêm"
-      create_new: "Tạo một danh mục mới"
+      create_new: "Tạo thể loại mới"
     create:
-      create_success: "Danh mục đã được tạo thành công"
+      create_success: "Tạo thể loại thành công"
       create_fail: "Không tạo thành công"
     destroy:
-      category_delete: "Danh mục và tất cả các bài viết liên quan đã được xóa thành công"
+      category_delete: "Thể loại và tất cả sách, bài viết liên quan đã được xóa thành công"
     show:
-      title: "Danh mục"
-      category: "Danh mục: "
-      edit_name: "Đổi tên danh mục"
-      delete_category: "Xóa danh mục"
+      title: "Thể loại"
+      category: "DThể loại: "
+      edit_name: "Đổi tên thể loại"
+      delete_category: "Xóa thể loại"
       are_you_sure: "Bạn có chắc chắn muốn xóa tài khoản người dùng và tất cả các bài viết liên quan không?"
       list_book: "Danh sách đầu sách"
   books:
@@ -111,3 +126,11 @@ vi:
     book:
       name_book: "Tên sách"
       author: "Tác giả"
+    not_found: "Sách không tồn tại"
+  admin:
+    shared:
+      info_cards:
+        quantity: "Số lượng: "
+    index:
+      dashboard: "Bảng điều khiển"
+      admin: "Quản lý"

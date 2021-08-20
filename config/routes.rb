@@ -10,7 +10,13 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-    resources :categories
-    resources :books
+    get "/admin" => "admin#index"
+    get "/user/categories", to: "categories#index"
+    get "/user/books", to: "books#index"
+
+    scope :admin do
+      resources :books
+      resources :categories
+    end
   end
 end

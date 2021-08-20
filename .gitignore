@@ -77,7 +77,6 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 
-/config/master.key
 .idea
 
 /spec/models
@@ -89,9 +88,6 @@ config/environments/*.local.yml
 
 /storage
 
-/public/packs
-/public/packs-test
-/node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity

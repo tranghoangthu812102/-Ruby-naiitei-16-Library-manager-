@@ -26,7 +26,7 @@ header {
   height: 6rem;
   color: #fff;
   text-align: center;
-  background: url('https://farm9.staticflickr.com/8088/8363737128_b76782c7a2_b.jpg') no-repeat center center;
+  background: url('https://www.openathens.net/app/uploads/2021/08/alfons-morales-YLSwjSy7stw-unsplash.jpg') no-repeat center center;
   background-size: cover;
   margin-bottom: 20px;
 
@@ -64,7 +64,7 @@ header {
   }
 }
 
-nav {
+.user-nav{
   position: relative;
   width: 100%;
   z-index: 10;
@@ -82,11 +82,14 @@ nav {
 
   li {
     float: left;
+    padding-bottom: 5px;
+    padding-right: 5px;
   }
 
   .dropdown-menu{
-    background-color: DodgerBlue;
+    background-color: #BCAC9B;
     font-size: 0.9em;
+    padding: 5px;
   }
 
   a {
@@ -114,14 +117,9 @@ nav {
     top: 25px;
   }
 
-  &:before {
-    content: '\00BB';
-    left: 20px;
-  }
-
-  &:after {
-    content: '\00AB';
-    left: 34px;
+  img {
+    height: 170px;
+    margin-top: -50px;
   }
 }
 
@@ -150,33 +148,12 @@ section {
 }
 
 /* footer */
-
-.footer-bottom {
-    padding: 15px 0;
-    border-top: 1px solid #313646;
-    background: #111 !important;
-    color: #b0b0b0;
-    font-family: rubik;
-    font-size: 1.2em;
-    width: 100%;
-}
-
-
 footer {
-  @mixin box_sizing {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  /* miscellaneous */
-  .debug_dump {
-    clear: both;
-    float: left;
-    width: 100%;
-    margin-top: 45px;
-    @include box_sizing;
-  }
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  height: 50px;
 }
 
 /* forms */
