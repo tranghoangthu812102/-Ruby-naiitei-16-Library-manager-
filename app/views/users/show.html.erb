@@ -5,14 +5,20 @@
     <section class="user_info">
       <h2>
         <div class="avatar">
-          <%  if @user.image.attached? %>
+          <% if @user.image.attached? %>
             <%= image_tag @user.display_image %>
           <% else %>
             <%= image_tag Settings.default_avatar %>
           <% end %>
         </div>
         <%= @user.name %>
+        <%= render "follow_form" if logged_in? %>
       </h2>
     </section>
+    <aside class="col-md-4 shared">
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
   </aside>
 </div>

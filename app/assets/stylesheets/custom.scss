@@ -173,7 +173,6 @@ input {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .form{
@@ -323,5 +322,75 @@ input {
 
   img {
     width: 100%;
+  }
+}
+ /* Follow Users */
+.show-fll{
+  margin-top: -80%;
+}
+
+.shared{
+  position: relative;
+  width: 100%;
+  margin-left: 35%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+ }
+
+.stats {
+  margin-top: -20px;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #e8e8e8;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+
+  strong {
+    display: block;
+    text-align: center;
+  }
+}
+
+.following{
+  margin-left: 5%;
+}
+
+#follow_form{
+  margin-top: 20px;
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid red;
   }
 }

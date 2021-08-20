@@ -1,6 +1,9 @@
 vi:
   link_return: "[ Hủy và trở về trang Category]"
   only_admin: "Chỉ quản trị viên mới có thể thực hiện hành động đó"
+  following: "Đang theo dõi"
+  follower: "Người theo dõi"
+  require_login: "Please log in."
   layouts:
     application:
       title: "Sun Library"
@@ -48,6 +51,8 @@ vi:
       intro_1: "Nhận trợ giúp tại "
       name: "Facebook"
   users:
+    index:
+      all_users: "Danh sách người dùng"
     new:
       sign_up: "Đăng ký"
       name: "Họ tên"
@@ -57,6 +62,15 @@ vi:
     create:
       welcome_to_library!: "Chào mừng đến với thư viện"
       registration_failed: "Đăng ký không thành công"
+    follow:
+      follow: "Theo dõi"
+    unfollow:
+      unfollow: "Bỏ theo dõi"
+    show_follow:
+      view_profile: "Xem trang cá nhân"
+    user:
+      delete: "Delete"
+      confirm: "Are you sure?"
   shared:
     error_messages:
       error: "Thông tin bạn nhập có"
@@ -64,6 +78,9 @@ vi:
     errors:
       mess: "Các lỗi sau đây đã ngăn"
       saved: "không được lưu"
+    stats:
+      following: "đang theo dõi"
+      followers: "người theo dõi"
   invalid_format_image: "không đúng định dạng"
   should_smaller: "quá lớn"
   application:
