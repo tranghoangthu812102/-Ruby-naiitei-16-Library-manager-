@@ -1,0 +1,13 @@
+<% provide :title, t(".borrowed_books_list") %>
+
+<h1>
+  <%= t ".borrowed_books_list" %>
+</h1>
+
+<%= paginate @requests %>
+
+<ul class="requests">
+  <%= render @requests %>
+</ul>
+
+<%= paginate @requests %>

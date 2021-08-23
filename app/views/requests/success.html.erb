@@ -1,0 +1,12 @@
+<%= provide :title, t(".success") %>
+
+<div class="row text-center">
+  <div class="col-sm-6 col-sm-offset-3">
+    <br><br> <h1 style="color:#0fad00"><%= t ".success" %></h1>
+    <img src=Settings.success_img alt="">
+    <h3><%= t ".dear" %>, <%= current_user.name %></h3>
+    <p class="success-notification"><%= t ".notification" %></p>
+    <%= link_to t(".view_borrowed_books"), requests_path, class: "btn btn-success" %>
+    <br><br>
+  </div>
+</div>

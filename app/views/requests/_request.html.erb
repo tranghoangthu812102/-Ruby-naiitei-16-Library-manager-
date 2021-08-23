@@ -1,0 +1,27 @@
+<li class="border border-dark m-3 p-3">
+  <%= link_to request.book.name, request.book, class: "h3 text-dark"%>
+  <div>
+    <strong><%= t ".borrow_user" %></strong>
+    <%= request.name %>
+    <br>
+    <strong><%= t ".date_start" %></strong>
+    <%= request.date_start.strftime(Settings.date_format) %>
+    <br>
+    <strong><%= t ".date_end" %></strong>
+    <%= request.date_end.strftime(Settings.date_format) %>
+    <br>
+    <% if request.borrowing? %>
+      <p class="text-warning font-weight-bold"><%= t ".borrowing" %></p>
+    <% elsif request.returned? %>
+      <p class="text-success font-weight-bold"><%= t ".returned" %></p>
+    <% else %>
+      <p class="text-danger font-weight-bold"><%= t ".expired" %></p>
+    <% end %>
+  </div>
+  <% if current_user.admin? && admin_page? && !request.returned? %>
+    <%= link_to t(".return_book"), return_book_path(user_id: request.user_id, book_id: request.book_id),
+                  method: :patch,
+                  req: {confirm: t(".you_sure?")},
+                  class:"btn btn-primary m-0" %>
+  <% end %>
+</li>

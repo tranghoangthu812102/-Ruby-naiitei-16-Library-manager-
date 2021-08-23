@@ -17,6 +17,7 @@
               <li><%= link_to t(".admin"), "/admin", class: "btn btn-warning ml-2" %></li>
             <% end %>
           </li>
+          <li><%= link_to t(".borrowed_book"), user_requests_path %></li>
           <li><%= link_to t(".profile"), current_user %></li>
           <li><%= link_to t(".settings"), "#" %></li>
           <li class="divider"></li>

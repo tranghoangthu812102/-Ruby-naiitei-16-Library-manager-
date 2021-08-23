@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_032243) do
+ActiveRecord::Schema.define(version: 2021_08_23_083229) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -98,13 +98,13 @@ ActiveRecord::Schema.define(version: 2021_08_16_032243) do
   create_table "requests", charset: "utf8", force: :cascade do |t|
     t.datetime "date_start"
     t.datetime "date_end"
-    t.string "status"
-    t.bigint "books_id", null: false
-    t.bigint "users_id", null: false
+    t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["books_id"], name: "index_requests_on_books_id"
-    t.index ["users_id"], name: "index_requests_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.index ["book_id"], name: "index_requests_on_book_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "reviews", charset: "utf8", force: :cascade do |t|
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_032243) do
   add_foreign_key "book_publishers", "books"
   add_foreign_key "book_publishers", "publishers"
   add_foreign_key "books", "authors"
-  add_foreign_key "requests", "books", column: "books_id"
-  add_foreign_key "requests", "users", column: "users_id"
+  add_foreign_key "requests", "books"
+  add_foreign_key "requests", "users"
   add_foreign_key "reviews", "users"
 end

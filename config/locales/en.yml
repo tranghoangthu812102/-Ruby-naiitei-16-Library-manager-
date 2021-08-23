@@ -25,6 +25,7 @@ en:
       vietnamese: "Vietnamese"
       books: "Borrow book"
       admin: "Admin ->"
+      borrowed_book: "Borrowed books"
     footer:
       english: "English"
       vietnamese: "Vietnamese"
@@ -40,6 +41,7 @@ en:
       view_books: "View book list"
       create_books: "Create new book"
       home: "Home"
+      return_book: "Return book"
   static_pages:
     home:
       fore_title: "Home"
@@ -143,6 +145,7 @@ en:
     book:
       name_book: "Name"
       author: "Author"
+      borrow_book: "Mượn sách"
     not_found: "Book not exists"
     show:
       title: "Book"
@@ -153,6 +156,7 @@ en:
       created: "Created"
       ago: "ago"
       edited: "Edited"
+      borrow_book: "Mượn sách"
     destroy:
       success_delete: "Book and all associated articles successfully deleted"
     edit:
@@ -169,3 +173,32 @@ en:
     index:
       dashboard: "Dashboard"
       admin: "Admin"
+  requests:
+    new:
+      request_book: "Create request to borrow books"
+      submit: "Submit"
+      date_start: "Borrowing day: "
+      date_end: "Return day: "
+    success:
+      success: "Success"
+      dear: "Dear"
+      notification: "Thank you for borrowing book from our library. Please sit still, the librarian will bring the book to you."
+      view_borrowed_books: "View borrowed books"
+    please_login: "Please login before using this feature"
+    index:
+      borrowed_book: "Borrowed books"
+    request:
+      date_start: "Borrowing day: "
+      date_end: "Due date: "
+      borrowing: "Borrowing"
+      returned: "Returned"
+      expired: "Expired"
+      you_sure?: "Are you sure?"
+      return_book: "Return book"
+      borrow_user: "User: "
+    create:
+      date_end_invalid: "Invalid date. Due date must be after today"
+      save_error: "Error! Can't create request."
+    edit:
+      borrowed_books_list: "Borrowed books list"
+    already_borrowed: "You have already borrowed this book. Borrowing book of the same type limited to one per customer."

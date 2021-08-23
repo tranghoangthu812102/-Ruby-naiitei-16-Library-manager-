@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
     get "/admin" => "admin#index"
+    get "/user/requests", to: "requests#index"
     get "/user/categories", to: "categories#index"
     get "/user/books", to: "books#index"
     get "/user/books/:id", to: "books#show", as: "showbook"
@@ -24,10 +25,17 @@ Rails.application.routes.draw do
     scope :admin do
       resources :books
       resources :categories
+      resources :requests, only: :index
+      patch "/return_book", to: "requests#update"
     end
 
     resources :categories
     resources :relationships, only: %i(create destroy)
 
+    resources :books do
+      resources :requests
+    end
+    resources :requests, only: :index
+    get "/success", to: "requests#success"
   end
 end
