@@ -9,7 +9,8 @@ class Ability
       can :manage, :all
     else
       can [:show, :index], :all
-      can [:create, :new], :user
+      can [:create, :new], :users
+      can [:create, :new], User
     end
   end
 end

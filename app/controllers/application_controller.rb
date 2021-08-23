@@ -25,4 +25,16 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def load_user
+    @user = User.find params[:id]
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t "require_login"
+    redirect_to login_url
+  end
 end

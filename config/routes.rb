@@ -5,10 +5,16 @@ Rails.application.routes.draw do
     get "/help", to: "static_pages#help"
 
     get "/signup", to: "users#new"
-    resources :users, only: %i(new create show)
+    resources :users do
+      member do
+        resources :following, only: :index
+        resources :follower, only: :index
+      end
+    end
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+
 
     get "/admin" => "admin#index"
     get "/user/categories", to: "categories#index"
@@ -18,5 +24,9 @@ Rails.application.routes.draw do
       resources :books
       resources :categories
     end
+
+    resources :categories
+    resources :relationships, only: %i(create destroy)
+
   end
 end

@@ -1,6 +1,9 @@
 en:
   link_return: "[ Cancel and return to category ]"
   only_admin: "Only admins can perform that action"
+  following: "Following"
+  follower: "Followers"
+  require_login: "Please log in."
   layouts:
     application:
       title: "Sun Library"
@@ -48,6 +51,8 @@ en:
       intro_1: "Get help at "
       name: "Facebook"
   users:
+    index:
+      all_users: "All users"
     new:
       sign_up: "Signup"
       name: "Name"
@@ -57,6 +62,15 @@ en:
     create:
       welcome_to_library!: "Welcome to library!"
       registration_failed: "Registration failed"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    show_follow:
+      view_profile: "View profile"
+    user:
+      delete: "Delete"
+      confirm: "Are you sure?"
   shared:
     error_messages:
       the_form_contains: "The form contains"
@@ -64,6 +78,9 @@ en:
     errors:
       mess: "The following errors prevented the"
       saved: "from being saved"
+    stats:
+      following: "following"
+      followers: "followers"
   invalid_format_image: "onvalid format image"
   should_smaller: "is too big"
   application:

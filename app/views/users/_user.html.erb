@@ -1,0 +1,12 @@
+<li>
+  <% if user.image.attached? %>
+    <%= image_tag user.display_image %>
+  <% else %>
+    <%= image_tag(Settings.default_avatar, size: Settings.user_size) %>
+  <% end %>
+
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to t(".delete"), user, method: :delete, data: {confirm: t(".confirm")} %>
+  <% end %>
+</li>
