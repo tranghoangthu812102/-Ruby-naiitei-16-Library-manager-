@@ -1,9 +1,9 @@
 class Book < ApplicationRecord
   belongs_to :author
-  has_many :book_categories, dependent: :destroy
+  has_many :book_categories
   has_many :book_publishers, dependent: :destroy
   has_many :reviews, as: :reviewable, dependent: :destroy
-  has_many :categories, through: :book_categories
+  has_many :categories, through: :book_categories, dependent: :destroy
 
   accepts_nested_attributes_for :book_categories
 

@@ -6,7 +6,13 @@
       </div>
       <div class="card-inner">
         <div class="header">
-          <h3><%= t ".name_book" %>: <%= link_to book.name, book %></h3>
+          <h3><%= t ".name_book" %>:
+            <% if logged_in? && current_user.admin? %>
+              <%= link_to book.name, book  %>
+            <% else %>
+              <%= link_to book.name, showbook_path(book)  %>
+            <% end %>
+          </h3>
           <h4><%= t ".author" %>: <%= book.author_name %></h4>
         </div>
       </div>

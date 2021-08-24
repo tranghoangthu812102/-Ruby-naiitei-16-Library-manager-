@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   load_and_authorize_resource
   before_action :find_book, except: %i(index new create)
-  before_action :list_categories, only: %i(new)
+  before_action :list_categories, only: %i(new create edit)
+  before_action :require_admin, except: %i(index show)
+  before_action :list_selected, only: :edit
 
   def index
     @books = Book.all.page params[:page]
   end
-
-  def show; end
 
   def new
     @book = Book.new
@@ -21,6 +21,30 @@ class BooksController < ApplicationController
     else
       flash.now[:danger] = t ".failed"
       render :new
+    end
+  end
+
+  def edit; end
+
+  def show; end
+
+  def update
+    if update_book
+      flash[:success] = t ".edit_success"
+      redirect_to @book
+    else
+      flash[:danger] = t ".edit_failed"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      flash[:success] = t ".success_delete"
+      redirect_to books_path
+    else
+      flash[:danger] = t ".fail_delete"
+      redirect_to @book
     end
   end
 
@@ -56,6 +80,18 @@ class BooksController < ApplicationController
     nil
   end
 
+  def update_book
+    Book.transaction do
+      author = Author.find_or_create_by! name: params[:book][:author]
+      @book.author = author
+      @book.update! book_params
+    end
+  rescue ActiveRecord::RecordInvalid
+    @book.book_categories.build
+    list_categories
+    nil
+  end
+
   def list_categories
     @categories = Category.pluck(:name, :id)
   end
@@ -64,5 +100,12 @@ class BooksController < ApplicationController
     author.errors.each do |error|
       book.errors.add("author #{error.attribute}", error.message)
     end
+  end
+
+  def require_admin
+    return if logged_in? && current_user.admin?
+
+    flash[:danger] = t "only_admin"
+    redirect_to books_path
   end
 end

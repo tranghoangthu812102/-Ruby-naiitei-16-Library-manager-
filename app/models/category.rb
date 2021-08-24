@@ -5,5 +5,5 @@ class Category < ApplicationRecord
                      maximum: Settings.validation.max_length}
 
   scope :search, ->(name){where "name LIKE ?", "%#{name}%"}
-  has_many :books, through: :book_categories
+  has_many :books, through: :book_categories, dependent: :destroy
 end
