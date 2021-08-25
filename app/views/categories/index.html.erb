@@ -11,11 +11,7 @@
 </div>
 
 <div class="container">
-  <% @categories.each do |category| %>
-    <button type="button" class="btn btn-outline-info index">
-      <%= link_to category.name, category_path(category) %>
-    </button>
-  <% end %>
+  <%= render @categories %>
 </div>
 
 <div class="container pagination justify-content-center" >

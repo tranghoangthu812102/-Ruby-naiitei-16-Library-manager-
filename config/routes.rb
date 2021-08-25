@@ -19,8 +19,10 @@ Rails.application.routes.draw do
     get "/admin" => "admin#index"
     get "/user/requests", to: "requests#index"
     get "/user/categories", to: "categories#index"
+    get "/user/categories/:id", to: "categories#show", as: "user_categories_show"
+
     get "/user/books", to: "books#index"
-    get "/user/books/:id", to: "books#show", as: "showbook"
+    get "/user/books/:id", to: "books#show", as: "user_books_show"
 
     scope :admin do
       resources :books

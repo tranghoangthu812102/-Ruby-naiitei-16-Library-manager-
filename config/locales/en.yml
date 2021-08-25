@@ -157,6 +157,12 @@ en:
       ago: "ago"
       edited: "Edited"
       borrow_book: "Mượn sách"
+      rate: "Rate"
+      no_cmt: "There are no reviews yet"
+      name: "Name"
+      author: "Author"
+      detail: "Detail"
+      category: "Category"
     destroy:
       success_delete: "Book and all associated articles successfully deleted"
     edit:
@@ -166,6 +172,12 @@ en:
     update:
       edit_success: "Edit book completed"
       edit_failed: "Edit failed"
+    book_admin:
+      name: "Name"
+      author: "Author"
+      are_you_sure: "Are you sure you want to delete the book?"
+      category: "Category"
+      view: "Action"
   admin:
     shared:
       info_cards:
