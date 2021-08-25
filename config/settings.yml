@@ -27,8 +27,8 @@ validation:
   min_length: 1
   max_length: 50
   num: 12
-
 zero: 0
-
 gravatar:
   follow_size: 30
+success_img: "https://osmhotels.com//assets/check-true.jpg"
+date_format: "%d-%m-%Y"

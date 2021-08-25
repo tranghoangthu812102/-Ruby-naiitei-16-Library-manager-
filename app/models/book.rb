@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   has_many :book_publishers, dependent: :destroy
   has_many :reviews, as: :reviewable, dependent: :destroy
   has_many :categories, through: :book_categories, dependent: :destroy
+  has_many :requests, foreign_key: :book_id, dependent: :destroy
 
   accepts_nested_attributes_for :book_categories
 

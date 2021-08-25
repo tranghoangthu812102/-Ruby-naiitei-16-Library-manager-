@@ -9,8 +9,8 @@ class Ability
       can :manage, :all
     else
       can [:show, :index], :all
-      can [:create, :new], :users
       can [:create, :new], User
+      can [:create, :new, :success], Request
     end
   end
 end

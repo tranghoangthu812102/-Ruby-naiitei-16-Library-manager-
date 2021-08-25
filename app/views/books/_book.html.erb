@@ -14,6 +14,9 @@
             <% end %>
           </h3>
           <h4><%= t ".author" %>: <%= book.author_name %></h4>
+          <%= link_to t(".borrow_book"),
+                      new_book_request_path(book),
+                      class: "btn btn-primary m-2" %>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 <%= provide :title, t(".title") %>
+
 <h1 class="text-center mt-4"><%= t ".book" %></h1>
 <!--set only admin can modify category-->
 <% if logged_in? && current_user.admin? %>
@@ -7,28 +8,32 @@
     <%= link_to t(".delete_book"), @book, class: "btn btn-outline-danger", method: :delete, data: {confirm: t(".are_you_sure")} %>
   </div>
 <% end %>
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-10 mt-4">
-      <div class="card text-center shadow mb-5 bg-white rounded">
-        <div class="card-header font-italic text-left" style = "display: flex">
-          <img src="https://loremflickr.com/320/240/paris"/>
-        </div>
-        <div class="card-body">
-          <div class="card-text text-left">
-            <h3><%= t(".name")%>: <%= @book.name %></h3>
-            <p><%= t(".author")%>: <%= @book.author_name %></p>
-            <p><%= t(".detail")%>: <%= @book.detail %></p>
-            <p><%= t(".category")%>:<% @book.categories.each do |category|%>
+<div class="row justify-content-md-center">
+  <div class="col-10 mt-4">
+    <div class="card text-center shadow mb-5 bg-white rounded">
+      <div class="card-header font-italic text-left" style="display: flex">
+        <img src="https://loremflickr.com/320/240/paris"/>
+      </div>
+      <div class="card-body">
+        <div class="card-text text-left">
+          <h3><%= t(".name") %>: <%= @book.name %></h3>
+          <p><%= t(".author") %>: <%= @book.author_name %></p>
+          <p><%= t(".detail") %>: <%= @book.detail %></p>
+          <p><%= t(".category") %>:
+            <% @book.categories.each do |category| %>
               <button><%= category.name %></button>
             <% end %>
-            </p>
-          </div>
+          </p>
         </div>
-        <div class="card-footer text-muted">
-          <small><%= t ".created" %> <%= time_ago_in_words(@book.created_at) %> <%= t ".ago"%>,
-            <%= t ".edited" %> <%= time_ago_in_words(@book.updated_at) %> <%= t ".ago"%> </small>
-        </div>
+        <% unless admin_page? %>
+          <%= link_to t(".borrow_book"),
+                      new_book_request_path(@book),
+                      class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+      <div class="card-footer text-muted">
+        <small><%= t ".created" %> <%= time_ago_in_words(@book.created_at) %> <%= t ".ago" %>,
+          <%= t ".edited" %> <%= time_ago_in_words(@book.updated_at) %> <%= t ".ago" %> </small>
       </div>
     </div>
   </div>

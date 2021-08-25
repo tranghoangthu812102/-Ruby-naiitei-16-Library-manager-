@@ -1,0 +1,20 @@
+<% provide :title, t(".request_book") %>
+
+<h1 class="text-center"><%= t ".request_book" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 px-5">
+    <%= form_for @request, url: book_requests_path do |f| %>
+      <div class="py-3">
+        <div>
+          <%= f.label t ".date_start" %>
+          <%= Time.now.strftime(Settings.date_format) %>
+        </div>
+        <div>
+          <%= f.label t ".date_end" %>
+          <%= f.date_field :date_end, class: "w-75" %>
+        </div>
+      </div>
+      <%= f.submit t(".submit"), class: "btn btn-primary align-center create_account_button" %>
+    <% end %>
+  </div>
+</div>

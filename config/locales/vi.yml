@@ -25,6 +25,7 @@ vi:
       vietnamese: "Tiếng Việt"
       books: "Mượn sách"
       admin: "Quản lý ->"
+      borrowed_book: "Sách đã mượn"
     footer:
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
@@ -40,6 +41,7 @@ vi:
       view_books: "Danh sách"
       create_books: "Tạo sách mới"
       home: "Trang chủ"
+      return_book: "Trả sách"
   static_pages:
     home:
       fore_title: "Trang chủ"
@@ -143,6 +145,7 @@ vi:
     book:
       name_book: "Tên sách"
       author: "Tác giả"
+      borrow_book: "Borrow book"
     not_found: "Sách không tồn tại"
     show:
       title: "sách"
@@ -153,6 +156,7 @@ vi:
       created: "Tạo"
       ago: "trước"
       edited: "Chỉnh sửa"
+      borrow_book: "Borrow book"
     destroy:
       success_delete: "Sách và tất cả các bài viết liên quan đã được xóa thành công"
     edit:
@@ -169,3 +173,32 @@ vi:
     index:
       dashboard: "Bảng điều khiển"
       admin: "Quản lý"
+  requests:
+    new:
+      request_book: "Tạo yêu cầu mượn sách"
+      submit: "Xác nhận"
+      date_start: "Ngày mượn: "
+      date_end: "Ngày trả: "
+    success:
+      success: "Thành công"
+      dear: "Chào"
+      notification: "Cảm ơn bạn đã mượn sách từ thư viện của chúng tôi. Hãy ngồi tại chỗ, nhân viên thư viện sẽ mang sách tới cho bạn."
+      view_borrowed_books: "Xem các sách đã mượn"
+    please_login: "Xin hãy đăng nhập trước khi sử dụng chức năng này"
+    index:
+      borrowed_book: "Sách đã mượn"
+    request:
+      date_start: "Ngày mượn: "
+      date_end: "Hạn trả: "
+      borrowing: "Đang mượn"
+      returned: "Đã trả"
+      expired: "Quá hạn"
+      you_sure?: "Bạn có chắc chắn?"
+      return_book: "Trả sách"
+      borrow_user: "Người mượn"
+    create:
+      date_end_invalid: "Ngày không hợp lệ. Ngày trả sách phải sau hôm nay"
+      save_error: "Lỗi! Không thể tạo yêu cầu mượn sách."
+    edit:
+      borrowed_books_list: "Danh sách mượn sách"
+    already_borrowed: "Bạn đã mượn quyển sách này. Với mỗi loại sách, giới hạn mỗi người chỉ được mượn 1 quyển."
