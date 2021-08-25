@@ -31,6 +31,9 @@ Rails.application.routes.draw do
       patch "/return_book", to: "requests#update"
     end
 
+    resources :books do
+      resources :reviews, only: %i(new create destroy)
+    end
     resources :categories
     resources :relationships, only: %i(create destroy)
 

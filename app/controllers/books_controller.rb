@@ -11,6 +11,11 @@ class BooksController < ApplicationController
     @books = search_result.page(params[:page]).per Settings.validation.num
   end
 
+  def show
+    @reviewable = @book
+    @review = Review.new
+  end
+
   def new
     @book = Book.new
     @book.book_categories.build
@@ -27,8 +32,6 @@ class BooksController < ApplicationController
   end
 
   def edit; end
-
-  def show; end
 
   def update
     if update_book

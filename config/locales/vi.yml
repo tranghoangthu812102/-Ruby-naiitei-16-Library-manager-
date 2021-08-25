@@ -49,6 +49,9 @@ vi:
       name: "Thư viện Sun"
       intro_1: "Đây là trang chủ của"
       signup: "Đăng ký"
+      for: "cho "
+      rating: "Xếp hạng: "
+      star: "Sao"
     help:
       fore_title: "Hỗ trợ"
       intro_1: "Nhận trợ giúp tại "
@@ -215,3 +218,22 @@ vi:
     edit:
       borrowed_books_list: "Danh sách mượn sách"
     already_borrowed: "Bạn đã mượn quyển sách này. Với mỗi loại sách, giới hạn mỗi người chỉ được mượn 1 quyển."
+  reviews:
+    create:
+      success: "Đánh giá của bạn đã được đăng thành công!"
+      fail: "Đánh giá của bạn chưa được đăng!"
+    detroy:
+      delete: "Đánh giá của bạn đã xóa"
+      wrong: "Đã xảy ra sự cố"
+    index:
+      review: "Đánh giá: "
+      rating: "Xếp hạng: "
+      star: "Sao"
+      destroy: "Xóa"
+      are_you_sure: "Bạn có chắc chắn muốn xóa bài đánh giá của mình không?"
+    new:
+      reviews: "Đánh giá"
+      rate: "Xếp hạng"
+      comment: "Đánh giá"
+      input: "Nhập một cái gì đó..."
+      submit: "Hoàn tất"

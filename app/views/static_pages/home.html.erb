@@ -1,14 +1,36 @@
 <% provide :title, t(".fore_title") %>
 
 <div class="center jumbotron">
-  <h1><%= t ".name" %></h1>
-  <h2>
-    <%= t ".intro_1" %>
-    <%= t ".name" %>
-  </h2>
-  <div>
-    <%= link_to t(".signup"),
-                new_user_path,
-                class: "btn btn-lg btn-primary" %>
-  </div>
+  <% if !logged_in? %>
+    <h1><%= t ".name" %></h1>
+    <h2>
+      <%= t ".intro_1" %>
+      <%= t ".name" %>
+    </h2>
+    <div>
+      <%= link_to t(".signup"),
+                  new_user_path,
+                  class: "btn btn-lg btn-primary" %>
+    </div>
+  <% else %>
+    <div>
+      <h2 class="font-weight-bold text-info">Newfeed</h2>
+      <% @feed_items.each do |review| %>
+        <% if review.user.present? && current_user.following?(review.user) %>
+          <div class="col-xl mb-3 border border-info">
+            <h4><%= link_to review.user.name, review.user %></h4>
+            <%= review.created_at.strftime(Settings.time_format) %>
+            <p class="mb-3">
+              <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
+              <%= t(".for")%><%= link_to review.book.name, user_books_show_path(review.book) %>
+            </p>
+            <div class = "ohstar" id="star-rate-<%= review.id %>"
+                      data-rate="<%= review.rate %>"></div>
+            <p><%= simple_format review.detail %></p>
+            </br>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
