@@ -10,6 +10,9 @@ import "channels"
 require("jquery")
 import "bootstrap"
 import './src/application.scss'
+require("packs/raty")
+require("packs/star")
+require("packs/index_star")
 
 Rails.start()
 Turbolinks.start()

@@ -32,3 +32,7 @@ gravatar:
   follow_size: 30
 success_img: "https://osmhotels.com//assets/check-true.jpg"
 date_format: "%d-%m-%Y"
+review:
+  less: 5
+  greater: 1
+time_format: "%d/%m/%Y %H:%m"

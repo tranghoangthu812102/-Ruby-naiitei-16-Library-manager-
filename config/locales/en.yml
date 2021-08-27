@@ -48,6 +48,9 @@ en:
       name: "Sun Library"
       intro_1: "This is the home page for the"
       signup: "Sign up"
+      for: "for "
+      rating: "Rating: "
+      star: "Star"
     help:
       fore_title: "Help"
       intro_1: "Get help at "
@@ -214,3 +217,22 @@ en:
     edit:
       borrowed_books_list: "Borrowed books list"
     already_borrowed: "You have already borrowed this book. Borrowing book of the same type limited to one per customer."
+  reviews:
+    create:
+      success: "Your review was successfully posted!"
+      fail: "Your review wasn't posted!"
+    detroy:
+      delete: "Your review deleted"
+      wrong: "Something went wrong"
+    index:
+      review: "Reviews: "
+      rating: "Rating: "
+      star: "Star"
+      destroy: "Delete"
+      are_you_sure: "Are you sure you want to delete your review?"
+    new:
+      reviews: "Reviews"
+      rate: "Rating"
+      comment: "Review"
+      input: "Input Somethings..."
+      submit: "Submit"
