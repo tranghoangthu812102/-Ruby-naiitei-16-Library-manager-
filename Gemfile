@@ -45,9 +45,13 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
+  gem "factory_bot_rails"
   gem "rubocop", "~> 0.74.0"
   gem "rubocop-checkstyle_formatter"
   gem "rubocop-rails", "~> 2.3.2"
+  gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov"
+  gem "simplecov-rcov"
 end
 
 group :development, :test do

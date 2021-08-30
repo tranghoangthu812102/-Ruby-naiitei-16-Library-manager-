@@ -79,7 +79,6 @@ config/environments/*.local.yml
 
 .idea
 
-/spec/models
 /spec/helpers
 /spec/views
 /spec/requests
