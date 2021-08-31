@@ -44,7 +44,7 @@ class User < ApplicationRecord
   end
 
   def follow other_user
-    following << other_user
+    following << other_user unless self == other_user
   end
 
   def unfollow other_user

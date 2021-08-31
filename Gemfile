@@ -22,6 +22,8 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
@@ -38,6 +40,7 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
@@ -46,14 +49,9 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem "factory_bot_rails"
+  gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0"
   gem "rubocop-checkstyle_formatter"
   gem "rubocop-rails", "~> 2.3.2"
-  gem "shoulda-matchers", "~> 5.0"
-  gem "simplecov"
-  gem "simplecov-rcov"
-end
-
-group :development, :test do
-  gem "rspec-rails", "~> 4.0.1"
+  gem "shoulda-matchers"
 end
