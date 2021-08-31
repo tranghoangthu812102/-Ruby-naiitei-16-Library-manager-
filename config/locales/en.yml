@@ -168,6 +168,7 @@ en:
       category: "Category"
     destroy:
       success_delete: "Book and all associated articles successfully deleted"
+      fail_delete: "Destroy Failed"
     edit:
       edit_profile: "Edit profile"
       update_book: "Update"

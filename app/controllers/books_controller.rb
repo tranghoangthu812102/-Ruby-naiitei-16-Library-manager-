@@ -62,12 +62,6 @@ class BooksController < ApplicationController
   def find_book
     @book = Book.find_by id: params[:id]
     return if @book
-
-    if admin_page?
-      redirect_to books_path, flash: {danger: t(".not_found")}
-    else
-      redirect_to user_books_path, flash: {danger: t(".not_found")}
-    end
   end
 
   def create_book
@@ -109,9 +103,6 @@ class BooksController < ApplicationController
 
   def require_admin
     return if logged_in? && current_user.admin?
-
-    flash[:danger] = t "only_admin"
-    redirect_to books_path
   end
 
   def load_rate

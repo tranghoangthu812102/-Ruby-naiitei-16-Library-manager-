@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
     check = I18n.available_locales.include?(locale)
