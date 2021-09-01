@@ -39,21 +39,6 @@ RSpec.describe CategoriesController, type: :controller do
         expect(assigns(:category)).to be_a_new(Category)
       end
     end
-
-    context "When user is not admin" do
-      before do
-        log_in user
-        get :new
-      end
-
-      it "flash danger category invalid" do
-        expect(flash[:danger]).to eq I18n.t("application.action_not_allowed")
-      end
-
-      it "redirect to list category page" do
-        expect(response).to redirect_to home_path
-      end
-    end
   end
 
   describe "POST #create" do
@@ -101,23 +86,6 @@ RSpec.describe CategoriesController, type: :controller do
         end
       end
     end
-
-    context "When user is not admin" do
-      before do
-        log_in user
-      end
-      before do
-        post :create, params: {category: { "name": "hay"}}
-      end
-
-      it "flash danger category invalid" do
-        expect(flash[:danger]).to eq I18n.t("application.action_not_allowed")
-      end
-
-      it "redirect to list category page" do
-        expect(response).to redirect_to home_path
-      end
-    end
   end
 
   describe "PATCH #update" do
@@ -156,23 +124,6 @@ RSpec.describe CategoriesController, type: :controller do
         end
       end
     end
-
-    context "When user is not admin" do
-      before do
-        log_in user
-      end
-      before do
-        patch :update, params: {id: category_1.id, category: {name: "wow"}}
-      end
-
-      it "flash danger category invalid" do
-        expect(flash[:danger]).to eq I18n.t("application.action_not_allowed")
-      end
-
-      it "redirect to list category page" do
-        expect(response).to redirect_to home_path
-      end
-    end
   end
 
   describe "DELETE #detroy" do
@@ -196,21 +147,6 @@ RSpec.describe CategoriesController, type: :controller do
           category = assigns(:category)
           expect(response).to redirect_to category
         end
-      end
-    end
-
-    context "When user is not admin" do
-      before do
-        log_in user
-        delete :destroy, params: {id: category_1.id}
-      end
-
-      it "flash danger category invalid" do
-        expect(flash[:danger]).to eq I18n.t("application.action_not_allowed")
-      end
-
-      it "redirect to list category page" do
-        expect(response).to redirect_to home_path
       end
     end
   end

@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   include SessionsHelper
   include AdminHelper
   include BooksHelper
 
   before_action :set_locale
+  before_action :redirect_member
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
@@ -14,6 +16,14 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do
     redirect_to home_path, flash: {danger: t("application.action_not_allowed")}
+  end
+
+  def new_url url
+    return url.remove "/admin" if current_user&.member?
+
+    return url.gsub "/user", "/admin" if !admin_page? && current_user&.admin?
+
+    url
   end
 
   private
@@ -38,5 +48,11 @@ class ApplicationController < ActionController::Base
     store_location
     flash[:danger] = t "require_login"
     redirect_to login_url
+  end
+
+  def redirect_member
+    url = request.original_url
+    redirect_url = new_url(url)
+    redirect_to redirect_url unless url.eql? redirect_url
   end
 end

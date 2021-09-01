@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     scope :admin do
       resources :books
       resources :categories
-      resources :requests, only: :index
+      get "/return_book_list", to: "requests#edit"
       patch "/return_book", to: "requests#update"
     end
 

@@ -5,11 +5,13 @@ class RequestsController < ApplicationController
   before_action :load_book, only: :create
 
   def index
-    if admin_page?
-      @requests = Request.page params[:page]
-      return
-    end
-    @requests = current_user.requests.page params[:page]
+    @requests = current_user.requests.newest.page(params[:page])
+                            .per Settings.return_book.page_limit
+  end
+
+  def edit
+    @requests = Request.newest.page(params[:page])
+                       .per Settings.return_book.page_limit
   end
 
   def new

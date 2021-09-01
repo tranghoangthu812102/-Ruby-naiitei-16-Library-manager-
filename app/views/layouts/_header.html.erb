@@ -1,5 +1,6 @@
-<% if admin_page? %>
+<% if current_user&.admin? %>
   <%= render "layouts/admin_header" %>
-<% else %>
+<%# elsif current_user.member? %>
+  <% else %>
   <%= render "layouts/user_header" %>
 <% end %>
