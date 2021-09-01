@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :load_category, except: %i(index new create)
-  before_action :require_admin, except: %i(index show)
 
   def index
     search_result = Category.search(params[:name])
@@ -46,13 +45,6 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
-  end
-
-  def require_admin
-    return if logged_in? && current_user.admin?
-
-    flash[:danger] = t "only_admin"
-    redirect_to categories_path
   end
 
   def load_category
