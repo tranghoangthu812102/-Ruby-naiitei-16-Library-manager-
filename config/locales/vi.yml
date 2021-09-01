@@ -169,6 +169,7 @@ vi:
       category: "Thể loại"
     destroy:
       success_delete: "Sách và tất cả các bài viết liên quan đã được xóa thành công"
+      fail_delete: "Xóa thất bại"
     edit:
       edit_profile: "Chỉnh sửa thông tin "
       update_book: "Cập nhật"
