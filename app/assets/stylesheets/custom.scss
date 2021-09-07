@@ -203,6 +203,12 @@ input {
   border-radius: 50%;
 }
 
+.nav-avatar img{
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
 .mb-3{
   margin-top: 30px;
 
@@ -606,6 +612,7 @@ h2 {
     }
   }
 }
+
 p {
   text-indent: 30px;
   font-size: 16px;
@@ -632,4 +639,18 @@ h4 {
 .social-share-button {
   right: 1px;
   top: 0px;
+}
+
+.book-request {
+  font-size: larger;
+}
+
+.request-info {
+  border:1px solid black;
+  padding: 20px;
+  text-decoration-color: brown;
+}
+
+.request-date {
+  padding: 20px
 }

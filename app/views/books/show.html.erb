@@ -3,7 +3,7 @@
   <%= t ".book" %>
 </h1>
 <!--set only admin can modify category-->
-<% if logged_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <div class="text-center mt-4">
     <%= link_to t(".edit_name"), edit_book_path(@book), class: "btn btn-outline-info" %>
     <%= link_to t(".delete_book"), @book, class: "btn btn-outline-danger" , method: :delete, data: {confirm:
@@ -58,7 +58,7 @@
   <div>
     <%= render template: "reviews/new" %>
   </div>
-</br>
+</div>
 <div>
   <%= render partial: "reviews/index" , locals: {reviewable: @reviewable} %>
 </div>

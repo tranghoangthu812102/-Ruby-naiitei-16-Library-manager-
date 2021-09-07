@@ -2,7 +2,6 @@ class BooksController < ApplicationController
   load_and_authorize_resource
   before_action :find_book, except: %i(index new create)
   before_action :list_categories, only: %i(new create edit)
-  before_action :require_admin, except: %i(index show)
   before_action :list_selected, only: :edit
   before_action :load_rate, only: :show
 
@@ -101,10 +100,6 @@ class BooksController < ApplicationController
     author.errors.each do |error|
       book.errors.add("author #{error.attribute}", error.message)
     end
-  end
-
-  def require_admin
-    return if logged_in? && current_user.admin?
   end
 
   def load_rate

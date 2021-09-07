@@ -1,7 +1,7 @@
 <% provide :title, t(".fore_title") %>
 
 <div class="center jumbotron">
-  <% if !logged_in? %>
+  <% unless user_signed_in? %>
     <h1><%= t ".name" %></h1>
     <h2>
       <%= t ".intro_1" %>

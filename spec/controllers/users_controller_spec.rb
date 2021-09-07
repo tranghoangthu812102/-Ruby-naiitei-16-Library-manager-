@@ -38,47 +38,4 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
-
-  describe "GET /new" do
-    before do
-      get :new
-    end
-
-    it "should redirect to new_user_path" do
-      expect(response.response_code).to eq 200
-    end
-  end
-
-  describe "POST /create" do
-    let!(:user_count){User.count}
-
-    context "when job information is valid" do
-      before do
-        post :create, params: {user: { "name": "Vinh", email: "test@gmail.com", password: "123456" }}
-      end
-
-      it "increase number of user by 1" do
-        expect(User.count).to eq(user_count + 1)
-      end
-
-      it "should redirect to user page" do
-        new_user = assigns(:user)
-        expect(response).to redirect_to new_user
-      end
-
-      it "should flash success" do
-        expect(flash[:success]).to eq I18n.t("users.create.welcome_to_library!")
-      end
-    end
-
-    context "when params is invalid" do
-      before do
-        post :create, params: {user: { "name"=>"name" }}
-      end
-
-      it "don't change number of user" do
-        expect(User.count).to eq(user_count)
-      end
-    end
-  end
 end
