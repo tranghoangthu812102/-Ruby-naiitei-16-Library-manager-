@@ -249,6 +249,15 @@ input {
   color: #aaa;
 }
 
+.body_search {
+  margin-bottom: 10px;
+}
+
+.button-search{
+  margin-top: 9%;
+  width: 100%;
+}
+
 /* pagination */
 .pagination a, .pagination span.current, .pagination span.gap {
   float: left;
@@ -548,18 +557,26 @@ h2 {
   }
 
   .col-1 {
-    flex-basis: 25%;
+    flex-basis: 5%;
   }
 
   .col-2 {
-    flex-basis: 25%;
+    flex-basis: 20%;
   }
 
   .col-3 {
-    flex-basis: 25%;
+    flex-basis: 15%;
   }
 
   .col-4 {
+    flex-basis: 20%;
+  }
+
+  .col-5 {
+    flex-basis: 15%;
+  }
+
+  .col-6 {
     flex-basis: 25%;
   }
 
@@ -596,4 +613,23 @@ p {
 
 h4 {
   text-indent: 40px;
+}
+
+.book-admin {
+  margin-top: 20px;
+}
+
+/*social button*/
+
+.social-share-button .ssb-icon {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 46px !important;
+  display: inline-block !important;
+  height: 50px !important;
+  width: 60px !important;
+}
+.social-share-button {
+  right: 1px;
+  top: 0px;
 }

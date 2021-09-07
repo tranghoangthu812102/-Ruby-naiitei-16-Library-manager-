@@ -17,8 +17,4 @@ RSpec.describe Book, type: :model do
   describe "nested_attributes" do
     it { should accept_nested_attributes_for(:book_categories) }
   end
-
-  describe "scope" do
-    it { expect(Book.search("hello")).to eq([Book.first]) }
-  end
 end

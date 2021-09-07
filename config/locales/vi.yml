@@ -148,6 +148,11 @@ vi:
       list_book: "Danh sách đầu sách"
   books:
     form:
+      name: "Tên*"
+      detail: "Thông tin"
+      number_of_page: "Số Trang*"
+      author: "Tác giả*"
+      category_id: "Thể loại"
       name_placeholder: "Tên sách "
       detail_placeholder: "Thông tin sách"
       back: "Quay lại danh sách các sách"
@@ -158,8 +163,10 @@ vi:
       success: "Tạo sách mới thành công"
       failed: "Tạo sách thất bại"
     index:
-      list_book: "Danh sách"
+      list_book: "Quản lý sách"
       no_book: "Không có thông tin sách nào"
+      create_book: "Tạo sách mới"
+      created_at: "Sắp xếp ngày tạo"
     book:
       name_book: "Tên sách"
       author: "Tác giả"
@@ -197,6 +204,11 @@ vi:
       are_you_sure: "Bạn có chắc chắn muốn xóa sách?"
       category: "Thể loại"
       action: "Hành động"
+      created_at: "Ngày tạo"
+    search_form:
+      search: "Tìm"
+      book_name: "Tên sách"
+      author_name: "Tác giả"
   admin:
     shared:
       info_cards:

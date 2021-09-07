@@ -1,10 +1,13 @@
 <%= provide :title, t(".title") %>
-<h1 class="text-center mt-4"><%= t ".book" %></h1>
+<h1 class="text-center mt-4">
+  <%= t ".book" %>
+</h1>
 <!--set only admin can modify category-->
 <% if logged_in? && current_user.admin? %>
   <div class="text-center mt-4">
     <%= link_to t(".edit_name"), edit_book_path(@book), class: "btn btn-outline-info" %>
-    <%= link_to t(".delete_book"), @book, class: "btn btn-outline-danger", method: :delete, data: {confirm: t(".are_you_sure")} %>
+    <%= link_to t(".delete_book"), @book, class: "btn btn-outline-danger" , method: :delete, data: {confirm:
+          t(".are_you_sure")} %>
   </div>
 <% end %>
 <div class="container">
@@ -12,36 +15,50 @@
     <div class="col-10 mt-4">
       <div class="card text-center shadow mb-5 bg-white rounded">
         <div class="card-header font-italic text-left show_book">
-          <img src="https://loremflickr.com/320/240/paris"/>
+          <img src="https://loremflickr.com/320/240/paris" />
         </div>
         <div class="card-body">
           <div class="card-text text-left">
-            <h3><%= t(".name")%>: <%= @book.name %></h3>
-            <p><%= t(".author")%>: <%= @book.author_name %></p>
-            <p><%= t(".detail")%>: <%= @book.detail %></p>
-            <p><%= t(".category")%>: <% @book.categories.each do |category|%>
-              <button type="button" class="btn btn-success"><%= category.name %></button>
-            <% end %>
+            <h3>
+              <%= t(".name")%>: <%= @book.name %>
+            </h3>
+            <p>
+              <%= t(".author")%>: <%= @book.author_name %>
             </p>
-            <p><%= t(".rate")%>: <%= @rate.nil?? t(".no_cmt") : @rate %>*</p>
+            <p>
+              <%= t(".detail")%>: <%= @book.detail %>
+            </p>
+            <p>
+              <%= t(".category")%>: <% @book.categories.each do |category|%>
+                <%= link_to category.name, current_user.admin? ? category : user_categories_show_path(category), class: "btn btn-success" %>
+              <% end %>
+            </p>
+            <p>
+              <%= t(".rate")%>: <%= @rate.nil?? t(".no_cmt") : @rate %>*
+            </p>
           </div>
         </div>
+        <%= social_share_button_tag(@book.name, :allow_sites=> %w(twitter facebook)) %>
         <% unless admin_page? %>
-          <%= link_to t(".borrow_book"),
-                      new_book_request_path(@book),
-                      class: "btn btn-lg btn-primary" %>
+          <%= link_to t(".borrow_book"), new_book_request_path(@book), class: "btn btn-lg btn-primary" %>
         <% end %>
         <div class="card-footer text-muted">
-          <small><%= t ".created" %> <%= time_ago_in_words(@book.created_at) %> <%= t ".ago" %>,
-            <%= t ".edited" %> <%= time_ago_in_words(@book.updated_at) %> <%= t ".ago" %> </small>
+          <small>
+            <%= t ".created" %>
+            <%= time_ago_in_words(@book.created_at) %>
+            <%= t ".ago" %>,
+            <%= t ".edited" %>
+            <%= time_ago_in_words(@book.updated_at) %>
+            <%= t ".ago" %>
+          </small>
         </div>
       </div>
     </div>
-</div>
-<div>
-  <%= render template: "reviews/new" %>
-</div>
+  </div>
+  <div>
+    <%= render template: "reviews/new" %>
+  </div>
 </br>
 <div>
-  <%= render partial: "reviews/index", locals: {reviewable: @reviewable} %>
+  <%= render partial: "reviews/index" , locals: {reviewable: @reviewable} %>
 </div>

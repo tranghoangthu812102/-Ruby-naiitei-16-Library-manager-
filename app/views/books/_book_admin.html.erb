@@ -1,23 +1,29 @@
-<div class="container">
+<div class="book-admin">
   <ul class="responsive-table">
     <li class="table-header">
-      <div class="col col-1"><%= t ".name" %></div>
-      <div class="col col-2"><%= t ".author" %></div>
-      <div class="col col-3"><%= t ".category" %></div>
-      <div class="col col-4"><%= t ".action" %></div>
+      <div class="col col-1"><%= t ".STT" %></div>
+      <div class="col col-2"><%= t ".name" %></div>
+      <div class="col col-3"><%= t ".author" %></div>
+      <div class="col col-4"><%= t ".category" %></div>
+      <div class="col col-5"><%= t ".created_at" %></div>
+      <div class="col col-6"><%= t ".action" %></div>
     </li>
+    <% @i = 0%>
     <% @books.each do |book| %>
       <li class="table-row">
-        <div class="col col-1"><%= book.name %></div>
-        <div class="col col-2"><%= book.author_name %></div>
-        <div class="col col-3">
+        <div class="col col-1"><%= @i = @i + 1  %></div>
+        <div class="col col-2"><%= book.name %></div>
+        <div class="col col-3"><%= book.author_name %></div>
+        <div class="col col-4">
           <% book.categories.each do |category| %>
-            <button class="btn btn-light"><%= category.name %></button>
+            <%= link_to category.name, category, class: "btn btn-light" %>
           <% end %>
         </div>
-        <div class="col col-4">
+        <div class="col col-5"><%= book.created_at.strftime("%d/%m/%Y") %></div>
+        <div class="col col-6">
           <%= link_to t(".view"), book, class: "btn btn-outline-info"  %>
-          <%= link_to t(".delete_book"), book, class: "btn btn-outline-danger", method: :delete, data: {confirm: t(".are_you_sure")} %>
+          <%= link_to t(".edit"), edit_book_path(book), class: "btn btn-outline-info" %>
+          <%= link_to t(".delete"), book, class: "btn btn-outline-danger", method: :delete, data: {confirm: t(".are_you_sure")} %>
         </div>
       </li>
     <% end %>

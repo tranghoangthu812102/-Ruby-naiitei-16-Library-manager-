@@ -10,6 +10,9 @@ class Book < ApplicationRecord
 
   delegate :name, to: :author, prefix: true
 
+  ransack_alias :author, :author_name
+  SORTS = ["created_at desc"].freeze
+
   PERMITTED_FIELDS =
     [
       :name, :detail, :number_of_page,
@@ -18,13 +21,13 @@ class Book < ApplicationRecord
     ].freeze
 
   validates :name, presence: true,
-            length: {
-              maximum: Settings.validate.name.max_length
-            }
+                   length: {
+                     maximum: Settings.validate.name.max_length
+                   }
 
   validates :number_of_page, presence: true,
-            numericality: {
-              only_integer: true,
-              greater_than: Settings.zero
-            }
+                             numericality: {
+                               only_integer: true,
+                               greater_than: Settings.zero
+                             }
 end

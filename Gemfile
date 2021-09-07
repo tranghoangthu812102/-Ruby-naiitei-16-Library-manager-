@@ -25,6 +25,7 @@ gem "ransack"
 gem "sass-rails", ">= 6"
 gem "simplecov"
 gem "simplecov-rcov"
+gem "social-share-button"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 gem "whenever", require: false

@@ -159,6 +159,8 @@ en:
     index:
       list_book: "List Book"
       no_book: "No book information"
+      creat_book: "Create new book"
+      created_at: "Sort creation date"
     book:
       name_book: "Name"
       author: "Author"
@@ -196,6 +198,11 @@ en:
       are_you_sure: "Are you sure you want to delete the book?"
       category: "Category"
       view: "Action"
+      created_at: "Created at"
+    search_form:
+      search: "Book Management"
+      book_name: "Book name"
+      author_name: "Author"
   admin:
     shared:
       info_cards:

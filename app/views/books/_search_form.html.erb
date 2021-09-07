@@ -1,0 +1,17 @@
+<%= search_form_for @q, url: current_user.admin? ? books_url : user_books_url do |f| %>
+  <div class="body_search">
+    <div class="row">
+      <div class="col-6 col-md-4">
+        <%= f.label t(".book_name") %>
+        <%= f.search_field :name_cont, class: "form-control" %>
+      </div>
+      <div class="col-6 col-md-4">
+        <%= f.label t(".author_name") %>
+        <%= f.search_field :author_cont, class: "form-control" %>
+      </div>
+      <div class="col-6 col-md-4">
+        <%= f.submit t(".search") , class: "btn btn-outline-primary button-search" %>
+      </div>
+    </div>
+  </div>
+<%end%>
