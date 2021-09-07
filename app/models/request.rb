@@ -6,6 +6,8 @@ class Request < ApplicationRecord
 
   validate :check_valid_date, on: :create
 
+  scope :newest, ->{order created_at: :desc}
+
   enum status: {borrowing: 1, returned: 2, expired: 3}
 
   def check_valid_date
