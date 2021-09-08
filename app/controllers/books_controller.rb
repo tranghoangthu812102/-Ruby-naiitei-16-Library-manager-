@@ -7,8 +7,10 @@ class BooksController < ApplicationController
   before_action :load_rate, only: :show
 
   def index
-    search_result = Book.search params[:name]
-    @books = search_result.page(params[:page]).per Settings.validation.num
+    @q = Book.ransack(params[:q])
+    @q.sorts = Book::SORTS if @q.sorts.empty?
+    @books = @q.result.includes(:author)
+               .page(params[:page]).per(Settings.validation.num)
   end
 
   def show

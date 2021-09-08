@@ -4,28 +4,28 @@
       <%= form_with model: @book, class: "shadow p-3 mb-3 rounded", local: true do |f| %>
         <%= render partial: "shared/error_messages", object: @book.errors %>
         <div class="form-group row">
-          <%= f.label :name, class: "col-2 col-form-label" %>
+          <%= f.label t(".name"), class: "col-2 col-form-label" %>
           <div class="col-10">
             <%= f.text_field :name, class: "form-control shadow rounded", placeholder: t(".name_placeholder") %>
           </div>
         </div>
 
         <div class="form-group row">
-          <%= f.label :detail, class: "col-2 col-form-label" %>
+          <%= f.label t(".detail"), class: "col-2 col-form-label" %>
           <div class="col-10">
             <%= f.text_area :detail, rows: 10, class: "form-control shadow rounded", placeholder: t(".detail_placeholder") %>
           </div>
         </div>
 
         <div class="form-group row">
-          <%= f.label :number_of_page, class: "col-2 col-form-label " %>
+          <%= f.label t(".number_of_page"), class: "col-2 col-form-label " %>
           <div class="col-10">
             <%= f.number_field :number_of_page, value: number_to_currency(f.object.number_of_page.to_i, delimiter: "", unit: ""), step: :any %>
           </div>
         </div>
 
         <div class="form-group row">
-          <%= f.label :author, class: "col-2 col-form-label" %>
+          <%= f.label t(".author"), class: "col-2 col-form-label" %>
           <div class="col-10">
             <%= f.text_field :author, id: :user_name, list: "list-name" %>
               <datalist id="list-name">
@@ -38,7 +38,7 @@
 
         <div class="form-group row">
           <%= f.fields_for :book_categories do |book_categories_form| %>
-            <%= f.label :category_id, class: "col-2 col-form-label" %>
+            <%= f.label t(".category_id"), class: "col-2 col-form-label" %>
             <div class="col-10">
               <%= f.select :category_ids, options_for_select(@categories.map{|key, value| [key, value]}),
                 {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
