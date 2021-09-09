@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   load_and_authorize_resource
   before_action :check_login, only: %i(create success)
   before_action :check_borrowed_book, only: :create
-  before_action :load_book, only: :create
+  before_action :load_book, only: %i(create new)
 
   def index
     @requests = current_user.requests.newest.page(params[:page])
@@ -36,7 +36,7 @@ class RequestsController < ApplicationController
     @request = Request.find_by book_id: params[:book_id],
                                user_id: params[:user_id]
     @request.returned!
-    redirect_to requests_url
+    redirect_to return_book_list_path
   end
 
   private
@@ -46,7 +46,9 @@ class RequestsController < ApplicationController
   end
 
   def check_login
-    redirect_to home_path, flash: {danger: t(".please_login")} unless logged_in?
+    return if user_signed_in?
+
+    redirect_to home_path, flash: {danger: t(".please_login")}
   end
 
   def check_borrowed_book

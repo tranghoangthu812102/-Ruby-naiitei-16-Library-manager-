@@ -105,6 +105,14 @@ GEM
       dry-validation (~> 1.0, >= 1.0.0)
     crass (1.0.6)
     deep_merge (1.2.1)
+    devise (4.8.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-i18n (1.10.0)
+      devise (>= 4.8.0)
     diff-lcs (1.4.4)
     docile (1.4.0)
     dry-configurable (0.12.1)
@@ -200,6 +208,7 @@ GEM
     nokogiri (1.12.3)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.20.1)
     parser (3.0.2.0)
       ast (~> 2.4.1)
@@ -262,6 +271,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -337,6 +349,8 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.6.1)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -373,6 +387,8 @@ DEPENDENCIES
   capybara (>= 3.26)
   chosen-rails
   config
+  devise
+  devise-i18n
   factory_bot_rails
   faker (= 2.1.2)
   image_processing (= 1.9.3)

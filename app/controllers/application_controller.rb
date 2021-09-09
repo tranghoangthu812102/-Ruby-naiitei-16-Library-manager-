@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include BooksHelper
 
   before_action :set_locale
-  before_action :redirect_member
+  before_action :update_allowed_parameters, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
@@ -26,6 +26,13 @@ class ApplicationController < ActionController::Base
     url
   end
 
+  protected
+
+  def update_allowed_parameters
+    devise_parameter_sanitizer
+      .permit(:sign_up){|u| u.permit User::PERMITTED_FIELDS}
+  end
+
   private
 
   def set_locale
@@ -43,7 +50,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:danger] = t "require_login"

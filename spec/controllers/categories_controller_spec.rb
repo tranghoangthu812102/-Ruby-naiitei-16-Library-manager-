@@ -27,7 +27,7 @@ RSpec.describe CategoriesController, type: :controller do
   describe "POST #create" do
     context "When user is admin" do
       before do
-        log_in admin
+        sign_in(admin)
       end
 
       let!(:category_count){Category.count}
@@ -70,7 +70,7 @@ RSpec.describe CategoriesController, type: :controller do
   describe "PATCH #update" do
     context "When user is admin" do
       before do
-        log_in admin
+        sign_in(admin)
       end
 
       context "when update successfully" do
@@ -110,7 +110,7 @@ RSpec.describe CategoriesController, type: :controller do
     context "When user is admin" do
       let!(:category_count){Category.count}
       before do
-        log_in admin
+        sign_in(admin)
         delete :destroy, params: {id: category_1.id}
       end
 
