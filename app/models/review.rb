@@ -12,6 +12,9 @@ class Review < ApplicationRecord
               greater_than_or_equal_to: Settings.review.greater
             }
 
+  delegate :name, to: :book, prefix: true
+  delegate :name, to: :user, prefix: true
+
   def book
     reviewable if reviewable_type == Book.name
   end

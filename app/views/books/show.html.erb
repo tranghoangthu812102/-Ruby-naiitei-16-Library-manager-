@@ -34,7 +34,8 @@
               <% end %>
             </p>
             <p>
-              <%= t(".rate")%>: <%= @rate.nil?? t(".no_cmt") : @rate %>*
+              <%= t(".rate")%>: <%= @rate.nil?? t(".no_cmt") : @rate %>
+              <%= image_tag("star.png", style: "width:24px;") %>
             </p>
           </div>
         </div>

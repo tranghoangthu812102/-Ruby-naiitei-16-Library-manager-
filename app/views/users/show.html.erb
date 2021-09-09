@@ -18,3 +18,38 @@
     </aside>
   </aside>
 </div>
+<br/>
+<div>
+  <h4 class="font-weight-bold text-info"><%= t ".reviewed" %></h4>
+  <% @feed_items.each do |review| %>
+    <% if review.user_name == @user.name %>
+      <%= content_tag :div, class: 'divTableRow', id: dom_id(review) do %>
+        <div class="col-xl mb-3 border border-info">
+          <br/>
+          <div class="row">
+            <div class="col-auto mr-auto">
+              <h4><%= link_to review.user_name, review.user %></h4>
+            </div>
+            <div class="col-auto">
+              <%= link_to t(".edit"), edit_book_review_path(review.book, review), class: "btn btn-outline-info", remote: true %>
+              <button type="button" class="btn btn-outline-danger">
+                <%= link_to t(".destroy"), [review.reviewable, review],
+                  method: :delete,data: {confirm: t(".are_you_sure")} %>
+              </button>
+            </div>
+          </div>
+          <%= t ".at" %><%= review.created_at.strftime(Settings.time_format) %>
+          <p class="mb-3">
+            <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
+            <%= t(".for")%><%= link_to review.book_name, user_books_show_path(review.book) %>
+          </p>
+          <div class = "ohstar" id="star-rate-<%= review.id %>"
+              data-rate="<%= review.rate %>"></div>
+          <br/>
+          <%= review.detail %>
+          <hr/>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

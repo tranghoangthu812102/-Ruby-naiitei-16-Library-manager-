@@ -48,7 +48,8 @@ vi:
       fore_title: "Trang chủ"
       name: "Thư viện Sun"
       intro_1: "Đây là trang chủ của"
-      signup: "Đăng ký"
+      signup: "Đăng ký ngay!"
+      at: "Đánh giá vào: "
       for: "cho "
       rating: "Xếp hạng: "
       star: "Sao"
@@ -77,6 +78,12 @@ vi:
     user:
       delete: "Delete"
       confirm: "Are you sure?"
+    show:
+      reviewed: " Đã đánh giá"
+      for: "cho "
+      rating: "Đánh giá: "
+      star: "Sao"
+      at: "Đánh giá vào: "
   shared:
     error_messages:
       error: "Thông tin bạn nhập có"
@@ -99,7 +106,7 @@ vi:
     new:
       log_in: "Đăng nhập"
       password: "Mật khẩu"
-  sign_up_now!: "Đăng ký ngay!"
+  sign_up_now!: " Đăng ký ngay!"
   new_user?: "Chưa có tài khoản?"
   categories:
     category_admin:
@@ -249,13 +256,20 @@ vi:
     create:
       success: "Đánh giá của bạn đã được đăng thành công!"
       fail: "Đánh giá của bạn chưa được đăng!"
+    update:
+      edit_success: "Đã cập nhật thành công chi tiết đánh giá của bạn"
+      edit_fail: "Chỉnh sửa không thành công"
     detroy:
       delete: "Đánh giá của bạn đã xóa"
       wrong: "Đã xảy ra sự cố"
+    find_review:
+      not_found: "Không có thông tin"
     index:
-      review: "Đánh giá: "
+      review: "Số đánh giá: "
+      at: "Đánh giá lúc: "
       rating: "Xếp hạng: "
       star: "Sao"
+      edit: "Sửa"
       destroy: "Xóa"
       are_you_sure: "Bạn có chắc chắn muốn xóa bài đánh giá của mình không?"
     new:
@@ -264,3 +278,9 @@ vi:
       comment: "Đánh giá"
       input: "Nhập một cái gì đó..."
       submit: "Hoàn tất"
+    inline_form:
+      update_review_comment: "Chỉnh sửa Đánh giá"
+      comment: "Đánh giá"
+      input: "Nhập một cái gì đó..."
+      submit: "Hoàn tất"
+      link_return: "[ Hủy và trở về trang danh sách sách ]"

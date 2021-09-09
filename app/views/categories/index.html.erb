@@ -14,7 +14,7 @@
 <div class="container">
   <% if @categories.blank? %>
     <h2><%= t ".no_category" %></h2>
-  <% elsif logged_in? && current_user.admin? %>
+  <% elsif admin_page? %>
     <%= render "category_admin" %>
     <div class="container pagination justify-content-center" >
       <%= paginate @categories, theme: "twitter-bootstrap-3" %>

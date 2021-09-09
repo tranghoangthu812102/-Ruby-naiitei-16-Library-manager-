@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-
     get "/admin" => "admin#index"
     get "/user/requests", to: "requests#index"
     get "/user/categories", to: "categories#index"
@@ -33,7 +32,7 @@ Rails.application.routes.draw do
     end
 
     resources :books do
-      resources :reviews, only: %i(new create destroy)
+      resources :reviews
     end
     resources :categories
     resources :relationships, only: %i(create destroy)
