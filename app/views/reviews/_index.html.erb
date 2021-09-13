@@ -12,23 +12,34 @@
           <% if reviewable.reviews.size > 0 %>
             <% reviewable.reviews.each do |review| %>
               <% if review.user.present? %>
-                <div class="col-xl mb-3 border border-info">
-                  <h4><%= link_to review.user.name, review.user %></h4>
-                  <%= review.created_at.strftime(Settings.time_format) %>
-                  <p class="mb-3">
-                    <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
-                  </p>
-                  <div class = "ohstar" id="star-rate-<%= review.id %>"
-                    data-rate="<%= review.rate %>"></div>
-                  <p><%= simple_format review.detail %></p>
-                  <% if logged_in? && (current_user?(review.user) || current_user.admin?) %>
-                    <button type="button" class="btn btn-outline-danger">
-                      <%= link_to t(".destroy"), [reviewable, review], method: :delete,
-                      data: {confirm: t(".are_you_sure")} %>
-                    </button>
-                  <% end %>
-                  <hr/>
-                </div>
+                <%= content_tag :div, class: 'divTableRow', id: dom_id(review) do %>
+                  <div class="col-xl mb-3 border border-info">
+                    <br/>
+                    <div class="row">
+                      <div class="col-auto mr-auto">
+                        <h4><%= link_to review.user_name, review.user %></h4>
+                      </div>
+                      <div class="col-auto">
+                        <% if current_user?(review.user) || admin_page? %>
+                          <%= link_to t(".edit"), edit_book_review_path(review.book, review), class: "btn btn-outline-info", remote: true %>
+                          <button type="button" class="btn btn-outline-danger">
+                            <%= link_to t(".destroy"), [review.reviewable, review],
+                                method: :delete,data: {confirm: t(".are_you_sure")} %>
+                          </button>
+                        <% end %>
+                      </div>
+                    </div>
+                    <%= t ".at" %><%= review.created_at.strftime(Settings.time_format) %>
+                    <p class="mb-3">
+                      <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
+                    </p>
+                    <div class = "ohstar" id="star-rate-<%= review.id %>"
+                      data-rate="<%= review.rate %>"></div>
+                      <br/>
+                      <%= review.detail %>
+                    <hr/>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>

@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_reviewable
+  before_action :find_review, only: %i(edit update)
 
   def new
     @review = Review.new
@@ -15,6 +16,22 @@ class ReviewsController < ApplicationController
     else
       flash[:danger] = t ".fail"
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    respond_to do |format|
+      format.html do
+        if @review.update review_params
+          flash[:success] = t(".edit_success")
+          redirect_to user_books_show_path(@review.book)
+        else
+          flash[:danger] = t(".edit_fail")
+          redirect_to books_path
+        end
+      end
     end
   end
 
@@ -39,5 +56,13 @@ class ReviewsController < ApplicationController
     elsif params[:book_id].present?
       @reviewable = Book.find_by(id: params[:book_id])
     end
+  end
+
+  def find_review
+    @review = Review.find_by id: params[:id]
+    return if @review
+
+    flash[:danger] = t ".not_found"
+    redirect_to books_path
   end
 end

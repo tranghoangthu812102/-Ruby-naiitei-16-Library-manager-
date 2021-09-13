@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="table-row">
+    <%= form_with url: book_review_path(review.book, review), method: :patch,
+      model: review, class: "divTableRow", id: dom_id(review, "inline_form") do |f| %>
+      <%= render "shared/errors", object: f.object %>
+      <br/>
+      <div>
+        <h4 class="text-info"><b><%= t ".update_review_comment" %></b></h4>
+      </div>
+      <br/>
+      <div class="form-group">
+        <div class="form-group row">
+          <%= f.label :detail, t(".comment"), class:"col-md-3 col-form-label font-weight-bold" %>
+          <div class="col-md-9">
+            <%= f.text_area :detail, class: "form-control", rows: "8",
+                    placeholder: t(".input") %>
+          </div>
+        </div>
+      </div>
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
+      <%= link_to t(".link_return"), books_path, class: "text-info" %>
+      </p>
+    <% end %>
+    <br/>
+  </div>
+</div>

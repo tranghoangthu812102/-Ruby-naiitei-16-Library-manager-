@@ -4,7 +4,7 @@
       id: dom_id(category, "inline_form") do |f| %>
       <%= render "shared/errors", object: f.object %>
       <br/>
-      <div>
+      <div class="new_cate">
         <h4 class="text-info"><b><%= t ".update_cate" %></b></h4>
       </div>
       <br/>
@@ -21,7 +21,7 @@
           </form>
         </div>
       </div>
-        <p>
+        <p class="return">
           <%= link_to t("link_return"), categories_path, class: "text-info" %>
         </p>
     <% end %>

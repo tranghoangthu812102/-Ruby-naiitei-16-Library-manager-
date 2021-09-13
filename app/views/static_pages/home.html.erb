@@ -1,36 +1,68 @@
 <% provide :title, t(".fore_title") %>
 
-<div class="center jumbotron">
-  <% unless user_signed_in? %>
-    <h1><%= t ".name" %></h1>
-    <h2>
-      <%= t ".intro_1" %>
-      <%= t ".name" %>
-    </h2>
-    <div>
-      <%= link_to t(".signup"),
-                  new_user_path,
-                  class: "btn btn-lg btn-primary" %>
+<% unless user_signed_in? %>
+  <article class="background">
+    <div class ="box">
+      <h2>
+        <%= t ".intro_1" %>
+        <%= t ".name" %>
+      </h2>
+      <p>
+        <%= link_to t(".signup"),new_user_path,class: "btn btn-lg btn-primary signup" %>
+      </p>
     </div>
-  <% else %>
-    <div>
-      <h2 class="font-weight-bold text-info">Newfeed</h2>
-      <% @feed_items.each do |review| %>
-        <% if review.user.present? && current_user.following?(review.user) %>
+  </article>
+<% else %>
+  <div class="center jumbotron ">
+    <h2 class="font-weight-bold text-info">Newfeed</h2>
+    <% @feed_items.each do |review| %>
+      <% if review.user.present? && current_user.following?(review.user) %>
+        <div class="col-xl mb-3 border border-info">
+          <h4><%= link_to review.user_name, review.user %></h4>
+          <%= t ".at" %><%= review.created_at.strftime(Settings.time_format) %>
+          <p class="mb-3">
+            <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
+            <%= t(".for")%><%= link_to review.book_name,
+            user_books_show_path(review.book) %>
+          </p>
+          <div class = "ohstar" id="star-rate-<%= review.id %>"
+                    data-rate="<%= review.rate %>"></div>
+          <p><%= simple_format review.detail %></p>
+          </br>
+        </div>
+      <% elsif current_user?(review.user) || admin_page? %>
+        <%= content_tag :div, class: 'divTableRow', id: dom_id(review) do %>
           <div class="col-xl mb-3 border border-info">
-            <h4><%= link_to review.user.name, review.user %></h4>
-            <%= review.created_at.strftime(Settings.time_format) %>
+            <br/>
+            <div class="row">
+              <div class="col-auto mr-auto">
+                <h4><%= link_to review.user_name, review.user %></h4>
+              </div>
+              <div class="col-auto">
+                <% if current_user?(review.user) || admin_page? %>
+                  <%= link_to t(".edit"), edit_book_review_path(review.book, review),
+                  class: "btn btn-outline-info", remote: true %>
+                  <button type="button" class="btn btn-outline-danger">
+                      <%= link_to t(".destroy"), [review.reviewable, review],
+                              method: :delete,data: {confirm: t(".are_you_sure")} %>
+                  </button>
+                <% end %>
+              </div>
+            </div>
+            <%= t ".at" %><%= review.created_at.strftime(Settings.time_format) %>
             <p class="mb-3">
               <%= t ".rating" %> <%= review.rate %> <%= t ".star" %>
-              <%= t(".for")%><%= link_to review.book.name, user_books_show_path(review.book) %>
+              <%= t(".for")%><%= link_to review.book_name,
+              user_books_show_path(review.book) %>
             </p>
             <div class = "ohstar" id="star-rate-<%= review.id %>"
-                      data-rate="<%= review.rate %>"></div>
-            <p><%= simple_format review.detail %></p>
-            </br>
+                data-rate="<%= review.rate %>"></div>
+            <br/>
+            <%= review.detail %>
+            <hr/>
           </div>
         <% end %>
       <% end %>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>

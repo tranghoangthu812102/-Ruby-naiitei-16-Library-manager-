@@ -47,6 +47,7 @@ en:
       fore_title: "Home"
       name: "Sun Library"
       intro_1: "This is the home page for the"
+      at: "Review at: "
       signup: "Sign up"
       for: "for "
       rating: "Rating: "
@@ -76,6 +77,12 @@ en:
     user:
       delete: "Delete"
       confirm: "Are you sure?"
+    show:
+      reviewed: " Reviewed"
+      for: "for "
+      rating: "Rating: "
+      star: "Star"
+      at: "Review at: "
   shared:
     error_messages:
       the_form_contains: "The form contains"
@@ -98,7 +105,7 @@ en:
     new:
       log_in: "Login"
       password: "Password"
-  sign_up_now!: "Signup now!"
+  sign_up_now!: " Signup now!"
   new_user?: "New user?"
   categories:
     category_admin:
@@ -246,15 +253,28 @@ en:
     detroy:
       delete: "Your review deleted"
       wrong: "Something went wrong"
+    find_review:
+      not_found: "Not found information"
+    update:
+      edit_success: "Reviews detail updated successfully"
+      edit_fail: "Edit fail"
     index:
-      review: "Reviews: "
-      rating: "Rating: "
-      star: "Star"
+      review: "Total Reviews: "
+      at: "Review at: "
+      edit: "Edit"
       destroy: "Delete"
       are_you_sure: "Are you sure you want to delete your review?"
+      rating: "Rating: "
+      star: "Star"
     new:
       reviews: "Reviews"
       rate: "Rating"
       comment: "Review"
       input: "Input Somethings..."
       submit: "Submit"
+    inline_form:
+      update_review_comment: "Update Review Comment"
+      comment: "Review"
+      input: "Input Somethings..."
+      submit: "Submit"
+      link_return: "[ Cancel and return to list book ]"
