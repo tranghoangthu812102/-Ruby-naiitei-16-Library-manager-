@@ -4,21 +4,23 @@
 <div class="row justify-content-center">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.label :email %>
+      <%= f.label :email, class: "font-weight-bold" %>
       <%= f.email_field :email, class: "form-control" %>
-      <%= f.label t "sessions.new.password" %>
+      <br/>
+      <%= f.label t("sessions.new.password"), class: "font-weight-bold" %>
       <%= f.password_field :password, class: "form-control" %>
+      <br/>
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+        <div class="checkbox">
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :remember_me, class: "rememberme" %>
         </div>
       <% end %>
       <%= f.submit t("sessions.new.log_in"), class: "btn btn-primary" %>
     <% end %>
-    <p><%= t "new_user?" %><%= link_to t("sign_up_now!"), new_user_registration_path %></p>
-    <div class="forgot">
-      <%= render "devise/shared/links" %>
-    </div>
+    <br/>
+    <p class="font-weight-bold">
+      <%= t "new_user?" %><%= link_to t("sign_up_now!"), new_user_registration_path %>
+    </p>
   </div>
 </div>
